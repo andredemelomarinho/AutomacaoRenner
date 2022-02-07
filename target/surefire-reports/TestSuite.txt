@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 0.535 sec <<< FAILURE!
+tearDownTest(automation.AbstractTest)  Time elapsed: 0.464 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at automation.AbstractTest.getDriver(AbstractTest.java:175)
+	at automation.AbstractTest.tearDownTest(AbstractTest.java:148)
+
