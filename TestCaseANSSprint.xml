@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCases>
+    <TestCase>
+        <Summary>Visualização de Indicadores por Administrador</Summary>
+        <Description>Testa a visualização de indicadores por um usuário Administrador no portal ANS.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando acessar a página de listagem de indicadores</Step>
+            <Step>3. Então o ícone do botão de ação será três pontinhos</Step>
+            <Step>4. E deve liberar as funções de editar e ativar/inativar</Step>
+            <Step>5. E a listagem deve mostrar todos os indicadores cadastrados no sistema</Step>
+        </Steps>
+        <ExpectedResult>A listagem exibe todos os indicadores e opções de editar e ativar/inativar estão disponíveis.</ExpectedResult>
+    </TestCase>
+    
+    <TestCase>
+        <Summary>Visualização de Indicadores por Gestor</Summary>
+        <Description>Testa a visualização de indicadores por um usuário Gestor no portal ANS.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Gestor no portal ANS</Step>
+            <Step>2. Quando acessar a página de listagem de indicadores</Step>
+            <Step>3. Então o ícone do botão de ação será um "olho"</Step>
+            <Step>4. E ao clicar, deve levar aos detalhes do indicador</Step>
+            <Step>5. E a listagem deve mostrar apenas os indicadores vinculados ao usuário</Step>
+        </Steps>
+        <ExpectedResult>A listagem exibe apenas os indicadores vinculados ao Gestor, com ícone de "olho".</ExpectedResult>
+    </TestCase>
+
+    <TestCase>
+        <Summary>Visualização de Indicadores por Preposto</Summary>
+        <Description>Testa a visualização de indicadores por um usuário Preposto no portal ANS.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Preposto no portal ANS</Step>
+            <Step>2. Quando acessar a página de listagem de indicadores</Step>
+            <Step>3. Então o ícone do botão de ação será um "olho"</Step>
+            <Step>4. E ao clicar, deve levar aos detalhes do indicador</Step>
+            <Step>5. E a listagem deve mostrar apenas os indicadores vinculados ao usuário</Step>
+        </Steps>
+        <ExpectedResult>A listagem exibe apenas os indicadores vinculados ao Preposto, com ícone de "olho".</ExpectedResult>
+    </TestCase>
+    
+    <TestCase>
+        <Summary>Ativar Indicador</Summary>
+        <Description>Testa a ativação de um indicador por um Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E a listagem de indicadores inclui um indicador com status 'Inativo'</Step>
+            <Step>3. Quando clicar no botão de ação para o indicador inativo</Step>
+            <Step>4. Então deve ser apresentada a opção 'Ativar indicador'</Step>
+            <Step>5. E ao selecionar essa opção, o status do indicador deve mudar para 'Ativo'</Step>
+        </Steps>
+        <ExpectedResult>O indicador é ativado e o status é alterado para 'Ativo'.</ExpectedResult>
+    </TestCase>
+    
+    <TestCase>
+        <Summary>Inativar Indicador</Summary>
+        <Description>Testa a inativação de um indicador por um Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E a listagem de indicadores inclui um indicador com status 'Ativo'</Step>
+            <Step>3. Quando clicar no botão de ação para o indicador ativo</Step>
+            <Step>4. Então deve ser apresentada a opção 'Inativar indicador'</Step>
+            <Step>5. E ao selecionar essa opção, o status do indicador deve mudar para 'Inativo'</Step>
+        </Steps>
+        <ExpectedResult>O indicador é inativado e o status é alterado para 'Inativo'.</ExpectedResult>
+    </TestCase>
+    
+    <TestCase>
+        <Summary>Cadastro de Indicador com Sucesso</Summary>
+        <Description>Testa o cadastro de um indicador com sucesso no portal ANS.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando todos os campos do formulário de cadastro de indicador forem preenchidos corretamente</Step>
+            <Step>3. E o usuário clicar no botão "Salvar"</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve mostrar uma mensagem informando que o indicador foi cadastrado com sucesso.</ExpectedResult>
+    </TestCase>
+
+    <TestCase>
+        <Summary>Falha ao Salvar Indicador com Campos Vazios</Summary>
+        <Description>Testa o comportamento do sistema ao tentar salvar um indicador com campos vazios.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando algum campo obrigatório do formulário de cadastro de indicador estiver vazio</Step>
+            <Step>3. E o usuário clicar no botão "Salvar"</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve exibir um aviso vermelho nos campos que estão vazios.</ExpectedResult>
+    </TestCase>
+    
+    <!-- Continue for other test cases similarly -->
+</TestCases>
+
+    <!-- Caso 3 - Validação de Campos Dropdown -->
+    <TestCase>
+        <Summary>Validação de Campos Dropdown</Summary>
+        <Description>Testa a validação de campos dropdown no formulário de cadastro de indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando selecionar uma opção de um campo do tipo dropdown no formulário de cadastro de indicador</Step>
+            <Step>3. Então o campo deve aceitar somente as opções disponíveis em tela</Step>
+            <Step>4. E não deve permitir a entrada de valores fora das opções predefinidas</Step>
+        </Steps>
+        <ExpectedResult>O campo dropdown deve aceitar apenas as opções predefinidas, sem permitir valores fora dessas opções.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Mensagem de Sucesso após Cadastro -->
+    <TestCase>
+        <Summary>Mensagem de Sucesso após Cadastro</Summary>
+        <Description>Testa a exibição de mensagem de sucesso após o cadastro correto de um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando todos os campos do formulário de cadastro de indicador forem preenchidos corretamente</Step>
+            <Step>3. E o usuário clicar no botão "Salvar"</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve apresentar uma mensagem informando que o indicador foi cadastrado com sucesso.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Tentativa de Salvar sem Selecionar Opção de Dropdown -->
+    <TestCase>
+        <Summary>Tentativa de Salvar sem Selecionar Opção de Dropdown</Summary>
+        <Description>Testa o comportamento do sistema ao tentar salvar um indicador sem selecionar uma opção de dropdown.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E não selecionou uma opção no campo do tipo dropdown</Step>
+            <Step>3. Quando clicar no botão "Salvar"</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve exibir um aviso vermelho indicando que a seleção do campo dropdown é obrigatória.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Verificação de Mensagens de Erro -->
+    <TestCase>
+        <Summary>Verificação de Mensagens de Erro</Summary>
+        <Description>Testa a exibição de mensagens de erro quando campos obrigatórios não são preenchidos no formulário de cadastro de indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando tentar salvar o formulário de cadastro de indicador com campos obrigatórios não preenchidos</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve exibir mensagens de erro adequadas e em vermelho para cada campo não preenchido.</ExpectedResult>
+    </TestCase>
+</TestCases>
+
+    <!-- Caso 1 - Edição de Indicador com Sucesso -->
+    <TestCase>
+        <Summary>Edição de Indicador com Sucesso</Summary>
+        <Description>Testa a edição de um indicador com sucesso no portal ANS.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E todos os campos do formulário de edição de indicador já vêm preenchidos</Step>
+            <Step>3. Quando o usuário editar os campos desejados e clicar no botão "Salvar"</Step>
+            <Step>4. Então uma modal de confirmação deve ser apresentada pedindo para confirmar a ação</Step>
+            <Step>5. E o usuário confirma a ação na modal</Step>
+        </Steps>
+        <ExpectedResult>A tela deve apresentar uma mensagem informando que o indicador foi editado com sucesso.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Campos Dropdown - Validação de Opções Disponíveis -->
+    <TestCase>
+        <Summary>Campos Dropdown - Validação de Opções Disponíveis</Summary>
+        <Description>Testa a validação de campos dropdown ao editar um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando editar um campo do tipo dropdown no formulário de edição de indicador</Step>
+            <Step>3. Então o campo deve aceitar somente as opções disponíveis em tela</Step>
+            <Step>4. E não deve permitir a entrada de valores fora das opções predefinidas</Step>
+        </Steps>
+        <ExpectedResult>O campo dropdown deve aceitar apenas as opções predefinidas, sem permitir valores fora dessas opções.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Aviso de Campos Não Preenchidos -->
+    <TestCase>
+        <Summary>Aviso de Campos Não Preenchidos</Summary>
+        <Description>Testa a exibição de aviso ao deixar campos obrigatórios em branco durante a edição de um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando editar o formulário de indicador e deixar um ou mais campos obrigatórios em branco</Step>
+            <Step>3. E clicar no botão "Salvar"</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve exibir um aviso vermelho indicando que os campos não podem estar em branco.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Modal de Confirmação de Edição -->
+    <TestCase>
+        <Summary>Modal de Confirmação de Edição</Summary>
+        <Description>Testa a apresentação de uma modal de confirmação após editar um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando clicar no botão "Salvar" após editar um indicador</Step>
+            <Step>3. Então uma modal de confirmação deve ser apresentada</Step>
+            <Step>4. E o usuário deve ser capaz de confirmar ou cancelar a ação a partir da modal</Step>
+        </Steps>
+        <ExpectedResult>A modal deve permitir que o usuário confirme ou cancele a edição do indicador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Mensagem de Sucesso após Edição -->
+    <TestCase>
+        <Summary>Mensagem de Sucesso após Edição</Summary>
+        <Description>Testa a exibição de mensagem de sucesso após editar um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E confirmou a edição do indicador na modal</Step>
+            <Step>3. Quando a edição for processada com sucesso</Step>
+        </Steps>
+        <ExpectedResult>A tela deve apresentar uma mensagem informando que o indicador foi editado com sucesso.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Tentativa de Salvar sem Selecionar Opção de Dropdown -->
+    <TestCase>
+        <Summary>Tentativa de Salvar sem Selecionar Opção de Dropdown</Summary>
+        <Description>Testa o comportamento do sistema ao tentar salvar a edição sem selecionar uma opção de dropdown obrigatória.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E não selecionou uma opção no campo do tipo dropdown durante a edição</Step>
+            <Step>3. Quando clicar no botão "Salvar"</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve exibir um aviso vermelho indicando que a seleção do campo dropdown é obrigatória.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 7 - Verificação de Mensagens de Erro -->
+    <TestCase>
+        <Summary>Verificação de Mensagens de Erro</Summary>
+        <Description>Testa a exibição de mensagens de erro quando campos obrigatórios não são preenchidos durante a edição de um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando tentar salvar o formulário de edição de indicador com campos obrigatórios não preenchidos</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve exibir mensagens de erro adequadas e em vermelho para cada campo não preenchido.</ExpectedResult>
+    </TestCase>
+
+
+    <!-- Caso 1 - Fechar Modal com Ícone de Fechar -->
+    <TestCase>
+        <Summary>Fechar Modal com Ícone de Fechar</Summary>
+        <Description>Testa o comportamento da modal de ativação/inativação ao clicar no ícone de fechar.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando o usuário clicar no ícone de fechar na modal de ativação/inativação de indicador</Step>
+            <Step>3. Então a modal deve ser fechada</Step>
+            <Step>4. E a listagem de indicadores deve ser apresentada novamente sem alterações no status do indicador</Step>
+        </Steps>
+        <ExpectedResult>A modal deve ser fechada, e a listagem de indicadores deve permanecer inalterada.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Fechar Modal ao Clicar Fora -->
+    <TestCase>
+        <Summary>Fechar Modal ao Clicar Fora</Summary>
+        <Description>Testa o comportamento da modal de ativação/inativação ao clicar fora dela.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando o usuário clicar fora da modal de ativação/inativação de indicador</Step>
+            <Step>3. Então a modal deve ser fechada</Step>
+            <Step>4. E a listagem de indicadores deve ser apresentada novamente sem alterações no status do indicador</Step>
+        </Steps>
+        <ExpectedResult>A modal deve ser fechada, e a listagem de indicadores deve permanecer inalterada.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Fechar Modal com Botão 'Voltar' -->
+    <TestCase>
+        <Summary>Fechar Modal com Botão 'Voltar'</Summary>
+        <Description>Testa o comportamento da modal de ativação/inativação ao clicar no botão 'Voltar'.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando o usuário clicar no botão 'Voltar' na modal de ativação/inativação de indicador</Step>
+            <Step>3. Então a modal deve ser fechada</Step>
+            <Step>4. E a listagem de indicadores deve ser apresentada novamente sem alterações no status do indicador</Step>
+        </Steps>
+        <ExpectedResult>A modal deve ser fechada, e a listagem de indicadores deve permanecer inalterada.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Confirmar Ativação/Inativação de Indicador -->
+    <TestCase>
+        <Summary>Confirmar Ativação/Inativação de Indicador</Summary>
+        <Description>Testa a confirmação da alteração de status (ativação ou inativação) de um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando o usuário clicar no botão "Confirmar" na modal de ativação/inativação de indicador</Step>
+            <Step>3. Então o usuário deve ser redirecionado para a tela de listagem de indicadores</Step>
+            <Step>4. E o status do indicador deve ser alterado conforme solicitado (ativado ou inativado)</Step>
+        </Steps>
+        <ExpectedResult>A tela de listagem de indicadores deve ser carregada com o status do indicador alterado conforme a ação de ativação ou inativação.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Verificação de Mensagem de Sucesso após Alteração de Status -->
+    <TestCase>
+        <Summary>Verificação de Mensagem de Sucesso após Alteração de Status</Summary>
+        <Description>Testa a exibição de mensagem de sucesso após a alteração de status de um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E confirmou a alteração de status do indicador na modal</Step>
+            <Step>3. Quando redirecionado para a tela de listagem de indicadores</Step>
+        </Steps>
+        <ExpectedResult>A tela deve apresentar uma mensagem informando que o status do indicador foi alterado com sucesso.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Tentativa de Alterar Status sem Confirmação -->
+    <TestCase>
+        <Summary>Tentativa de Alterar Status sem Confirmação</Summary>
+        <Description>Testa o comportamento do sistema ao tentar alterar o status de um indicador sem confirmação na modal.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando o usuário abrir a modal de ativação/inativação de indicador, mas não clicar no botão "Confirmar"</Step>
+            <Step>3. Então o status do indicador não deve ser alterado</Step>
+            <Step>4. E ao fechar a modal de qualquer forma (ícone de fechar, clicar fora, botão 'Voltar'), a listagem de indicadores deve ser apresentada novamente sem alterações no status</Step>
+        </Steps>
+        <ExpectedResult>O status do indicador deve permanecer inalterado, e a listagem de indicadores deve ser exibida sem modificações.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Visualização de Fornecedores por Administrador -->
+    <TestCase>
+        <Summary>Visualização de Fornecedores por Administrador</Summary>
+        <Description>Testa o comportamento da listagem de fornecedores quando o usuário é um Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando acessar a página de listagem de fornecedores</Step>
+            <Step>3. Então a listagem deve mostrar todos os fornecedores cadastrados no sistema</Step>
+        </Steps>
+        <ExpectedResult>A listagem de fornecedores deve mostrar todos os fornecedores cadastrados no sistema.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Visualização de Fornecedores por Gestor -->
+    <TestCase>
+        <Summary>Visualização de Fornecedores por Gestor</Summary>
+        <Description>Testa o comportamento da listagem de fornecedores quando o usuário é um Gestor.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Gestor no portal ANS</Step>
+            <Step>2. Quando acessar a página de listagem de fornecedores</Step>
+            <Step>3. Então a listagem deve mostrar somente os fornecedores vinculados ao usuário</Step>
+        </Steps>
+        <ExpectedResult>A listagem de fornecedores deve mostrar apenas os fornecedores vinculados ao gestor.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Ação no Registro do Fornecedor -->
+    <TestCase>
+        <Summary>Ação no Registro do Fornecedor</Summary>
+        <Description>Testa a ação no registro de fornecedor ao clicar no ícone de ação.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. Quando clicar no ícone do botão de ação no registro de um fornecedor</Step>
+            <Step>3. Então os detalhes desse fornecedor devem ser abertos</Step>
+        </Steps>
+        <ExpectedResult>Os detalhes do fornecedor selecionado devem ser exibidos corretamente.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Paginação Incremental -->
+    <TestCase>
+        <Summary>Paginação Incremental</Summary>
+        <Description>Testa o comportamento da paginação de fornecedores ao adicionar novos registros.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E há vários fornecedores cadastrados no sistema</Step>
+            <Step>3. Quando novos fornecedores são adicionados</Step>
+            <Step>4. Então a funcionalidade de paginação deve exibir os novos fornecedores conforme são realizados os novos cadastros</Step>
+        </Steps>
+        <ExpectedResult>A paginação deve mostrar os novos fornecedores conforme são cadastrados no sistema.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Impedir Edição de Informações do MGPT -->
+    <TestCase>
+        <Summary>Impedir Edição de Informações do MGPT</Summary>
+        <Description>Testa a funcionalidade de impedir a edição das informações extraídas do MGPT.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. Quando visualizar as informações extraídas do MGPT</Step>
+            <Step>3. Então os campos dessas informações devem ser desativados para edição</Step>
+            <Step>4. E o usuário não deve conseguir alterar essas informações</Step>
+        </Steps>
+        <ExpectedResult>Os campos extraídos do MGPT devem ser desativados, e o usuário não deve conseguir editar essas informações.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Tentativa de Edição de Informações do MGPT -->
+    <TestCase>
+        <Summary>Tentativa de Edição de Informações do MGPT</Summary>
+        <Description>Testa a tentativa de editar informações extraídas do MGPT, que não devem ser editáveis.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. Quando tentar editar um campo de informações extraídas do MGPT</Step>
+            <Step>3. Então o sistema não deve permitir a edição e deve manter o campo desativado</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve impedir a edição do campo e manter o campo desativado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Visualização de Prepostos com Informações do Fornecedor Selecionado -->
+    <TestCase>
+        <Summary>Visualização de Prepostos com Informações do Fornecedor Selecionado</Summary>
+        <Description>Testa a visualização da aba de prepostos com as mesmas informações do fornecedor selecionado.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha selecionado um fornecedor na listagem de fornecedores</Step>
+            <Step>3. Quando acessar a aba de prepostos</Step>
+            <Step>4. Então a tela deve mostrar as mesmas informações que estavam sendo apresentadas na tela de listagem dos fornecedores referente ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>A aba de prepostos deve exibir as mesmas informações que estavam sendo apresentadas na tela de listagem de fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Informações de Prepostos Extraídas do MGPT -->
+    <TestCase>
+        <Summary>Informações de Prepostos Extraídas do MGPT</Summary>
+        <Description>Testa a extração de informações de prepostos do MGPT e sua exibição sem possibilidade de edição.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. Quando acessar a aba de prepostos para o fornecedor selecionado</Step>
+            <Step>3. Então as informações de prepostos devem ser extraídas do MGPT</Step>
+            <Step>4. E apresentadas na tela sem permitir edição</Step>
+        </Steps>
+        <ExpectedResult>As informações de prepostos extraídas do MGPT devem ser apresentadas na tela, sem permitir edição.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Visualização Somente dos Dados de Prepostos -->
+    <TestCase>
+        <Summary>Visualização Somente dos Dados de Prepostos</Summary>
+        <Description>Testa a visualização das informações dos prepostos sem permitir edição.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha acessado a aba de prepostos para o fornecedor selecionado</Step>
+            <Step>3. Quando visualizar os dados dos prepostos</Step>
+            <Step>4. Então o usuário deve ser capaz de ver todas as informações vinculadas aos prepostos, mas não deve ser possível fazer a edição dessas informações</Step>
+        </Steps>
+        <ExpectedResult>O usuário deve ser capaz de ver todas as informações dos prepostos, mas essas informações não podem ser editadas.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Consistência de Informações do Fornecedor -->
+    <TestCase>
+        <Summary>Consistência de Informações do Fornecedor</Summary>
+        <Description>Testa se as informações na aba de prepostos são consistentes com as informações da tela de listagem de fornecedores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha acessado a aba de prepostos para o fornecedor selecionado</Step>
+            <Step>3. Quando verificar as informações na aba de prepostos</Step>
+            <Step>4. Então as informações devem ser consistentes e iguais às apresentadas na tela de listagem de fornecedores para o fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações apresentadas na aba de prepostos devem ser consistentes e iguais às da tela de listagem de fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Visualização de Gestores com Informações do Fornecedor Selecionado -->
+    <TestCase>
+        <Summary>Visualização de Gestores com Informações do Fornecedor Selecionado</Summary>
+        <Description>Testa a visualização da aba de gestores com as mesmas informações do fornecedor selecionado.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha selecionado um fornecedor na listagem de fornecedores</Step>
+            <Step>3. Quando acessar a aba de gestores</Step>
+            <Step>4. Então a tela deve mostrar as mesmas informações que estavam sendo apresentadas na tela de listagem dos fornecedores</Step>
+        </Steps>
+        <ExpectedResult>A aba de gestores deve exibir as mesmas informações que estavam sendo apresentadas na tela de listagem dos fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Exibição do Botão "Adicionar Gestor" para Administrador -->
+    <TestCase>
+        <Summary>Exibição do Botão "Adicionar Gestor" para Administrador</Summary>
+        <Description>Testa se o botão "Adicionar gestor" é exibido para Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. Quando acessar a aba de gestores para o fornecedor selecionado</Step>
+            <Step>3. Então o botão "Adicionar gestor" deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão "Adicionar gestor" deve ser exibido para o Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Não Exibição do Botão "Adicionar Gestor" para Outros Perfis -->
+    <TestCase>
+        <Summary>Não Exibição do Botão "Adicionar Gestor" para Outros Perfis</Summary>
+        <Description>Testa se o botão "Adicionar gestor" não é exibido para perfis que não sejam de Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Gestor ou outro</Step>
+            <Step>2. Quando acessar a aba de gestores para o fornecedor selecionado</Step>
+            <Step>3. Então o botão "Adicionar gestor" não deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão "Adicionar gestor" não deve ser exibido para perfis que não sejam de Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Exibição do Botão de Ação Ativar/Inativar para Administrador -->
+    <TestCase>
+        <Summary>Exibição do Botão de Ação Ativar/Inativar para Administrador</Summary>
+        <Description>Testa se o botão de ação para ativar/inativar gestores é exibido para Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. Quando acessar a aba de gestores para o fornecedor selecionado</Step>
+            <Step>3. Então o botão de ação para ativar/inativar um gestor deve ser exibido ao lado dos gestores listados</Step>
+        </Steps>
+        <ExpectedResult>O botão de ação para ativar/inativar gestores deve ser exibido ao lado dos gestores listados para o Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Não Exibição do Botão de Ação Ativar/Inativar para Outros Perfis -->
+    <TestCase>
+        <Summary>Não Exibição do Botão de Ação Ativar/Inativar para Outros Perfis</Summary>
+        <Description>Testa se o botão de ação para ativar/inativar gestores não é exibido para outros perfis que não sejam Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Gestor ou outro</Step>
+            <Step>2. Quando acessar a aba de gestores para o fornecedor selecionado</Step>
+            <Step>3. Então o botão de ação para ativar/inativar um gestor não deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão de ação para ativar/inativar gestores não deve ser exibido para perfis que não sejam Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Mensagem Quando Não Houver Gestores Cadastrados -->
+    <TestCase>
+        <Summary>Mensagem Quando Não Houver Gestores Cadastrados</Summary>
+        <Description>Testa se uma mensagem é exibida quando não houver gestores cadastrados.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de gestores para o fornecedor selecionado</Step>
+            <Step>3. E não houver gestores cadastrados</Step>
+            <Step>4. Então a tela deve exibir uma mensagem informando que não há gestores cadastrados</Step>
+        </Steps>
+        <ExpectedResult>A tela deve exibir uma mensagem informando que não há gestores cadastrados.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 7 - Listagem de Gestores Cadastrados -->
+    <TestCase>
+        <Summary>Listagem de Gestores Cadastrados</Summary>
+        <Description>Testa se a listagem de gestores é exibida quando houver gestores cadastrados.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de gestores para o fornecedor selecionado</Step>
+            <Step>3. Quando houver gestores cadastrados</Step>
+            <Step>4. Então a tela deve exibir a listagem de gestores atrelados ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>A tela deve exibir a listagem de gestores atrelados ao fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 8 - Consistência de Informações do Fornecedor -->
+    <TestCase>
+        <Summary>Consistência de Informações do Fornecedor</Summary>
+        <Description>Testa se as informações na aba de gestores são consistentes com as informações da tela de listagem de fornecedores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de gestores para o fornecedor selecionado</Step>
+            <Step>3. Quando verificar as informações na aba de gestores</Step>
+            <Step>4. Então as informações devem ser consistentes e iguais às apresentadas na tela de listagem de fornecedores para o fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações apresentadas na aba de gestores devem ser consistentes e iguais às da tela de listagem de fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Exibição de Campo de Busca para Gestores -->
+    <TestCase>
+        <Summary>Exibição de Campo de Busca para Gestores</Summary>
+        <Description>Testa a exibição de um campo de busca para gestores na aba de gestores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E acessando a tela de edição de um fornecedor</Step>
+            <Step>3. Quando acessar a aba de gestores</Step>
+            <Step>4. Então deve haver um campo para o usuário efetuar a busca dos gestores</Step>
+        </Steps>
+        <ExpectedResult>O campo de busca para gestores deve ser exibido na aba de gestores.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Busca de Gestores por Nome -->
+    <TestCase>
+        <Summary>Busca de Gestores por Nome</Summary>
+        <Description>Testa a busca de gestores por nome na aba de gestores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E acessando a aba de gestores de um fornecedor</Step>
+            <Step>3. Quando o usuário inserir um nome no campo de busca e iniciar a pesquisa</Step>
+            <Step>4. Então a lista de gestores deve ser carregada a partir da integração com Acesso Inteligente</Step>
+        </Steps>
+        <ExpectedResult>Os gestores devem ser carregados corretamente conforme a busca por nome com a integração do Acesso Inteligente.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Listagem de Gestores Encontrados na Busca -->
+    <TestCase>
+        <Summary>Listagem de Gestores Encontrados na Busca</Summary>
+        <Description>Testa a criação de uma listagem com os gestores conforme o nome pesquisado no campo de busca.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E realizou a busca por nome no campo de busca de gestores</Step>
+            <Step>3. Quando a pesquisa retornar resultados</Step>
+            <Step>4. Então deve ser criada uma listagem com os gestores conforme o nome pesquisado no campo de busca</Step>
+        </Steps>
+        <ExpectedResult>A listagem de gestores deve ser criada com base no nome pesquisado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Ícone de '+' para Vincular Gestor ao Fornecedor -->
+    <TestCase>
+        <Summary>Ícone de '+' para Vincular Gestor ao Fornecedor</Summary>
+        <Description>Testa se o ícone de '+' para vincular gestores ao fornecedor é exibido corretamente.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E realizou uma busca de gestores</Step>
+            <Step>3. Quando a lista de gestores for apresentada</Step>
+            <Step>4. Então cada registro de gestor encontrado deve conter um ícone de '+' para realizar a ação de vincular o gestor ao fornecedor</Step>
+        </Steps>
+        <ExpectedResult>Cada registro de gestor encontrado deve exibir um ícone de '+' para vinculação.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Exibição da Modal para Confirmar Vínculo -->
+    <TestCase>
+        <Summary>Exibição da Modal para Confirmar Vínculo</Summary>
+        <Description>Testa se uma modal é exibida para confirmar o vínculo entre gestor e fornecedor.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E está visualizando a lista de gestores encontrados na busca</Step>
+            <Step>3. Quando clicar no ícone de '+' em um registro de gestor</Step>
+            <Step>4. Então uma modal deve aparecer para que o usuário confirme o vínculo entre gestor e fornecedor</Step>
+        </Steps>
+        <ExpectedResult>A modal de confirmação de vínculo deve ser exibida.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Confirmação do Vínculo entre Gestor e Fornecedor -->
+    <TestCase>
+        <Summary>Confirmação do Vínculo entre Gestor e Fornecedor</Summary>
+        <Description>Testa a confirmação do vínculo entre o gestor e o fornecedor na modal.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E está visualizando a modal de confirmação de vínculo</Step>
+            <Step>3. Quando o usuário confirmar o vínculo na modal</Step>
+            <Step>4. Então uma popup deve informar o sucesso do vínculo entre gestor e fornecedor</Step>
+        </Steps>
+        <ExpectedResult>Uma popup de sucesso deve ser exibida após a confirmação do vínculo entre o gestor e o fornecedor.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 7 - Mensagem de Sucesso Após Vínculo -->
+    <TestCase>
+        <Summary>Mensagem de Sucesso Após Vínculo</Summary>
+        <Description>Testa a exibição de uma mensagem de sucesso após a realização do vínculo entre gestor e fornecedor.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E confirmou o vínculo entre gestor e fornecedor na modal</Step>
+            <Step>3. Quando a ação de vínculo for completada</Step>
+            <Step>4. Então o sistema deve exibir uma popup informando o sucesso do vínculo</Step>
+        </Steps>
+        <ExpectedResult>Uma popup informando o sucesso do vínculo deve ser exibida após a confirmação.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 8 - Validação da Busca por Nome -->
+    <TestCase>
+        <Summary>Validação da Busca por Nome</Summary>
+        <Description>Testa a validação da busca de gestores quando um nome inválido ou inexistente é inserido.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando inserir um nome inválido ou inexistente no campo de busca de gestores</Step>
+            <Step>3. Então o sistema deve retornar uma mensagem indicando que nenhum gestor foi encontrado com o nome fornecido</Step>
+        </Steps>
+        <ExpectedResult>Uma mensagem informando que nenhum gestor foi encontrado com o nome fornecido deve ser exibida.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Visualização de Contratos SAP com Informações do Fornecedor Selecionado -->
+    <TestCase>
+        <Summary>Visualização de Contratos SAP com Informações do Fornecedor Selecionado</Summary>
+        <Description>Testa a visualização das informações dos contratos SAP relacionadas ao fornecedor selecionado na aba de contratos SAP.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha selecionado um fornecedor na listagem de fornecedores</Step>
+            <Step>3. Quando acessar a aba de contratos SAP</Step>
+            <Step>4. Então a tela deve mostrar as mesmas informações que estavam sendo apresentadas na tela de listagem dos fornecedores referente ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações exibidas na aba de contratos SAP devem ser as mesmas da tela de listagem de fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Informações de Contratos SAP Extraídas do MGPT -->
+    <TestCase>
+        <Summary>Informações de Contratos SAP Extraídas do MGPT</Summary>
+        <Description>Testa a extração e exibição das informações de contratos SAP a partir do MGPT.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. Quando acessar a aba de contratos SAP para o fornecedor selecionado</Step>
+            <Step>3. Então as informações de contratos SAP devem ser extraídas do MGPT</Step>
+            <Step>4. E apresentadas na tela sem permitir edição</Step>
+        </Steps>
+        <ExpectedResult>As informações de contratos SAP devem ser exibidas sem possibilidade de edição.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Visualização Somente dos Dados de Contratos SAP -->
+    <TestCase>
+        <Summary>Visualização Somente dos Dados de Contratos SAP</Summary>
+        <Description>Testa a visualização das informações dos contratos SAP sem permitir edição dos dados na aba de contratos SAP.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha acessado a aba de contratos SAP para o fornecedor selecionado</Step>
+            <Step>3. Quando visualizar os dados dos contratos SAP</Step>
+            <Step>4. Então o usuário deve ser capaz de ver todas as informações vinculadas aos contratos SAP, mas não deve ser possível fazer a edição dessas informações</Step>
+        </Steps>
+        <ExpectedResult>As informações de contratos SAP devem ser visualizadas sem permitir edição.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Consistência de Informações do Fornecedor -->
+    <TestCase>
+        <Summary>Consistência de Informações do Fornecedor</Summary>
+        <Description>Testa a consistência das informações do fornecedor na aba de contratos SAP comparadas com a tela de listagem de fornecedores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha acessado a aba de contratos SAP para o fornecedor selecionado</Step>
+            <Step>3. Quando verificar as informações na aba de contratos SAP</Step>
+            <Step>4. Então as informações devem ser consistentes e iguais às apresentadas na tela de listagem de fornecedores para o fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações na aba de contratos SAP devem ser consistentes e iguais às da tela de listagem de fornecedores.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Visualização de Indicadores com Informações do Fornecedor Selecionado -->
+    <TestCase>
+        <Summary>Visualização de Indicadores com Informações do Fornecedor Selecionado</Summary>
+        <Description>Testa a visualização das informações dos indicadores relacionadas ao fornecedor selecionado na aba de indicadores do contrato.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha selecionado um fornecedor na listagem de fornecedores</Step>
+            <Step>3. Quando acessar a aba de indicadores do contrato</Step>
+            <Step>4. Então a tela deve mostrar as mesmas informações que estavam sendo apresentadas na tela de listagem dos fornecedores referente ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações exibidas na aba de indicadores devem ser as mesmas da tela de listagem de fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Exibição do Botão "Vincular Indicador" para Administrador -->
+    <TestCase>
+        <Summary>Exibição do Botão "Vincular Indicador" para Administrador</Summary>
+        <Description>Testa a exibição do botão "Vincular indicador" para o usuário com perfil de Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. Quando acessar a aba de indicadores do contrato para o fornecedor selecionado</Step>
+            <Step>3. Então o botão "Vincular indicador" deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão "Vincular indicador" deve ser exibido para o Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Não Exibição do Botão "Vincular Indicador" para Outros Perfis -->
+    <TestCase>
+        <Summary>Não Exibição do Botão "Vincular Indicador" para Outros Perfis</Summary>
+        <Description>Testa que o botão "Vincular indicador" não é exibido para perfis que não sejam Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Gestor ou outro</Step>
+            <Step>2. Quando acessar a aba de indicadores do contrato para o fornecedor selecionado</Step>
+            <Step>3. Então o botão "Vincular indicador" não deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão "Vincular indicador" não deve ser exibido para Gestores ou outros perfis.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Exibição do Botão de Ação Ativar/Inativar para Administrador -->
+    <TestCase>
+        <Summary>Exibição do Botão de Ação Ativar/Inativar para Administrador</Summary>
+        <Description>Testa a exibição do botão de ação para ativar/inativar um indicador para usuários com perfil de Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. Quando acessar a aba de indicadores do contrato para o fornecedor selecionado</Step>
+            <Step>3. Então o botão de ação para ativar/inativar um indicador deve ser exibido ao lado dos indicadores listados</Step>
+        </Steps>
+        <ExpectedResult>O botão de ação para ativar/inativar um indicador deve ser exibido para o Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Não Exibição do Botão de Ação Ativar/Inativar para Outros Perfis -->
+    <TestCase>
+        <Summary>Não Exibição do Botão de Ação Ativar/Inativar para Outros Perfis</Summary>
+        <Description>Testa que o botão de ação para ativar/inativar um indicador não é exibido para perfis que não sejam Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Gestor ou outro</Step>
+            <Step>2. Quando acessar a aba de indicadores do contrato para o fornecedor selecionado</Step>
+            <Step>3. Então o botão de ação para ativar/inativar um indicador não deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão de ação para ativar/inativar um indicador não deve ser exibido para Gestores ou outros perfis.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Mensagem Quando Não Houver Indicadores Cadastrados -->
+    <TestCase>
+        <Summary>Mensagem Quando Não Houver Indicadores Cadastrados</Summary>
+        <Description>Testa a exibição de mensagem informando que não há indicadores cadastrados quando não houver indicadores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de indicadores do contrato para o fornecedor selecionado</Step>
+            <Step>3. E não houver indicadores cadastrados</Step>
+            <Step>4. Então a tela deve exibir uma mensagem informando que não há indicadores cadastrados</Step>
+        </Steps>
+        <ExpectedResult>Uma mensagem deve ser exibida informando que não há indicadores cadastrados.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 7 - Listagem de Indicadores Cadastrados -->
+    <TestCase>
+        <Summary>Listagem de Indicadores Cadastrados</Summary>
+        <Description>Testa a exibição de indicadores cadastrados na aba de indicadores do contrato.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de indicadores do contrato para o fornecedor selecionado</Step>
+            <Step>3. Quando houver indicadores cadastrados</Step>
+            <Step>4. Então a tela deve exibir a listagem de indicadores atrelados ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>A listagem de indicadores cadastrados deve ser exibida na tela.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 8 - Filtragem de Indicadores por Nome -->
+    <TestCase>
+        <Summary>Filtragem de Indicadores por Nome</Summary>
+        <Description>Testa a funcionalidade de filtragem de indicadores por nome.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de indicadores do contrato para o fornecedor selecionado</Step>
+            <Step>3. Quando utilizar o campo de busca para filtrar os indicadores por nome</Step>
+            <Step>4. Então a lista de indicadores deve ser atualizada conforme a pesquisa</Step>
+        </Steps>
+        <ExpectedResult>A lista de indicadores deve ser atualizada conforme o nome pesquisado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 9 - Vincular Indicador ao Fornecedor -->
+    <TestCase>
+        <Summary>Vincular Indicador ao Fornecedor</Summary>
+        <Description>Testa a ação de vincular um indicador ao fornecedor a partir da aba de indicadores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. E está visualizando a lista de indicadores encontrados na busca</Step>
+            <Step>3. Quando clicar no ícone de adicionar ('+') em um registro de indicador</Step>
+            <Step>4. Então deve ser redirecionado para a tela de edição das informações do vínculo do indicador</Step>
+        </Steps>
+        <ExpectedResult>O usuário deve ser redirecionado para a tela de edição das informações do vínculo do indicador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 10 - Salvar e Adicionar Mais Indicadores ao Vínculo -->
+    <TestCase>
+        <Summary>Salvar e Adicionar Mais Indicadores ao Vínculo</Summary>
+        <Description>Testa a ação de salvar as informações e adicionar mais indicadores ao vínculo.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. E está na tela de edição das informações do vínculo do indicador</Step>
+            <Step>3. Quando editar as informações conforme necessário e clicar em "Salvar"</Step>
+            <Step>4. Então o sistema deve permitir adicionar mais indicadores ao vínculo conforme necessário</Step>
+        </Steps>
+        <ExpectedResult>O sistema deve permitir adicionar mais indicadores ao vínculo após salvar.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 11 - Mensagem de Sucesso Após Vínculo -->
+    <TestCase>
+        <Summary>Mensagem de Sucesso Após Vínculo</Summary>
+        <Description>Testa a exibição de mensagem de sucesso após a confirmação do vínculo entre indicador e fornecedor.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. E confirmou o vínculo entre o indicador e o fornecedor</Step>
+            <Step>3. Quando a ação de vínculo for completada</Step>
+            <Step>4. Então o sistema deve exibir uma popup informando o sucesso do vínculo</Step>
+        </Steps>
+        <ExpectedResult>Uma popup de sucesso deve ser exibida informando que o vínculo foi realizado com sucesso.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Exibição de Campo de Busca para Indicadores -->
+    <TestCase>
+        <Summary>Exibição de Campo de Busca para Indicadores</Summary>
+        <Description>Verifica se o campo de busca para indicadores é exibido na tela de vínculo de indicadores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E está acessando a aba de indicadores para vinculação com um contrato</Step>
+            <Step>3. Quando acessar essa aba</Step>
+            <Step>4. Então deve haver um campo para o usuário efetuar a busca dos indicadores</Step>
+        </Steps>
+        <ExpectedResult>O campo de busca deve ser exibido na tela de vínculo de indicadores.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Busca de Indicadores por Nome -->
+    <TestCase>
+        <Summary>Busca de Indicadores por Nome</Summary>
+        <Description>Testa a busca de indicadores por nome no campo de busca.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E está acessando a aba de indicadores</Step>
+            <Step>3. Quando o usuário inserir um nome no campo de busca e iniciar a pesquisa</Step>
+            <Step>4. Então a lista de indicadores deve ser carregada conforme os cadastros realizados no portal ANS</Step>
+        </Steps>
+        <ExpectedResult>A lista de indicadores deve ser carregada conforme o nome pesquisado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Listagem de Indicadores Encontrados na Busca -->
+    <TestCase>
+        <Summary>Listagem de Indicadores Encontrados na Busca</Summary>
+        <Description>Testa a exibição da listagem de indicadores encontrados com base na pesquisa por nome.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E realizou a busca por nome no campo de busca de indicadores</Step>
+            <Step>3. Quando a pesquisa retornar resultados</Step>
+            <Step>4. Então deve ser criada uma listagem com os indicadores conforme o nome do indicador pesquisado no campo de busca</Step>
+        </Steps>
+        <ExpectedResult>A listagem deve ser criada com os indicadores encontrados com base na busca.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Ícone de '+' para Vincular Indicador ao Contrato do Fornecedor -->
+    <TestCase>
+        <Summary>Ícone de '+' para Vincular Indicador ao Contrato do Fornecedor</Summary>
+        <Description>Verifica se o ícone '+' para vincular indicadores ao contrato do fornecedor é exibido na lista.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E realizou uma busca de indicadores</Step>
+            <Step>3. Quando a lista de indicadores for apresentada</Step>
+            <Step>4. Então cada registro de indicador encontrado deve conter um ícone de '+' para realizar a ação de vincular o indicador ao contrato do fornecedor</Step>
+        </Steps>
+        <ExpectedResult>O ícone '+' deve estar presente ao lado de cada indicador encontrado para vinculação ao contrato.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Exibição da Modal para Selecionar Contrato -->
+    <TestCase>
+        <Summary>Exibição da Modal para Selecionar Contrato</Summary>
+        <Description>Verifica se uma modal é exibida para selecionar o contrato quando o usuário clicar no ícone '+' de um indicador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E está visualizando a lista de indicadores encontrados na busca</Step>
+            <Step>3. Quando clicar no ícone '+' em um registro de indicador</Step>
+            <Step>4. Então uma modal deve ser apresentada para que o usuário selecione qual contrato deseja vincular ao indicador</Step>
+        </Steps>
+        <ExpectedResult>Uma modal deve ser exibida para selecionar o contrato ao qual o indicador será vinculado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Confirmação do Vínculo do Indicador ao Contrato do Fornecedor -->
+    <TestCase>
+        <Summary>Confirmação do Vínculo do Indicador ao Contrato do Fornecedor</Summary>
+        <Description>Verifica se a modal de confirmação é exibida após selecionar o contrato.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E está visualizando a modal de seleção de contrato</Step>
+            <Step>3. Quando o usuário clicar para confirmar o vínculo do indicador ao contrato do fornecedor</Step>
+            <Step>4. Então uma modal de confirmação de ação deve ser apresentada</Step>
+        </Steps>
+        <ExpectedResult>Uma modal de confirmação deve ser exibida após o clique para vincular o indicador ao contrato.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 7 - Mensagem de Sucesso após Confirmar Vínculo -->
+    <TestCase>
+        <Summary>Mensagem de Sucesso após Confirmar Vínculo</Summary>
+        <Description>Testa a exibição de uma mensagem de sucesso após a confirmação do vínculo do indicador ao contrato.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. E confirmou o vínculo do indicador ao contrato do fornecedor na modal de confirmação</Step>
+            <Step>3. Quando a ação de vínculo for completada</Step>
+            <Step>4. Então o sistema deve exibir uma popup informando o sucesso do vínculo</Step>
+        </Steps>
+        <ExpectedResult>Uma popup deve ser exibida informando que o vínculo do indicador ao contrato foi bem-sucedido.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 8 - Validação da Busca por Nome do Indicador -->
+    <TestCase>
+        <Summary>Validação da Busca por Nome do Indicador</Summary>
+        <Description>Testa a validação da busca quando o nome do indicador inserido for inválido ou inexistente.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado como Administrador no portal ANS</Step>
+            <Step>2. Quando inserir um nome inválido ou inexistente no campo de busca de indicadores</Step>
+            <Step>3. Então o sistema deve retornar uma mensagem indicando que nenhum indicador foi encontrado com o nome fornecido</Step>
+        </Steps>
+        <ExpectedResult>Uma mensagem informando que nenhum indicador foi encontrado deve ser exibida.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Visualização de BSC com Informações do Fornecedor Selecionado -->
+    <TestCase>
+        <Summary>Visualização de BSC com Informações do Fornecedor Selecionado</Summary>
+        <Description>Verifica se as informações do fornecedor selecionado são apresentadas corretamente na aba de BSC.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha selecionado um fornecedor na listagem de fornecedores</Step>
+            <Step>3. Quando acessar a aba de BSC</Step>
+            <Step>4. Então a tela deve mostrar as mesmas informações que estavam sendo apresentadas na tela de listagem dos fornecedores referente ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações exibidas na aba de BSC devem ser consistentes com as da listagem de fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Exibição do Botão "Vincular BSC" para Administrador -->
+    <TestCase>
+        <Summary>Exibição do Botão "Vincular BSC" para Administrador</Summary>
+        <Description>Verifica se o botão "Vincular BSC" é exibido para o usuário com perfil de Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. Quando acessar a aba de BSC para o fornecedor selecionado</Step>
+            <Step>3. Então o botão "Vincular BSC" deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão "Vincular BSC" deve estar visível para o Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Não Exibição do Botão "Vincular BSC" para Outros Perfis -->
+    <TestCase>
+        <Summary>Não Exibição do Botão "Vincular BSC" para Outros Perfis</Summary>
+        <Description>Verifica se o botão "Vincular BSC" não é exibido para perfis que não sejam Administradores.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Gestor ou outro</Step>
+            <Step>2. Quando acessar a aba de BSC para o fornecedor selecionado</Step>
+            <Step>3. Então o botão "Vincular BSC" não deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>O botão "Vincular BSC" não deve ser exibido para perfis que não sejam Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Exibição do Botão de Ação Ativar/Inativar e Editar para Administrador -->
+    <TestCase>
+        <Summary>Exibição do Botão de Ação Ativar/Inativar e Editar para Administrador</Summary>
+        <Description>Verifica se os botões de ação (Ativar/Inativar e Editar) são exibidos ao lado dos BSCs para o perfil de Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Administrador</Step>
+            <Step>2. Quando acessar a aba de BSC para o fornecedor selecionado</Step>
+            <Step>3. Então o botão de ação para ativar/inativar e editar um BSC deve ser exibido ao lado dos BSCs listados</Step>
+        </Steps>
+        <ExpectedResult>Os botões de ação (Ativar/Inativar e Editar) devem estar visíveis ao lado dos BSCs listados.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Não Exibição do Botão de Ação Ativar/Inativar e Editar para Outros Perfis -->
+    <TestCase>
+        <Summary>Não Exibição do Botão de Ação Ativar/Inativar e Editar para Outros Perfis</Summary>
+        <Description>Verifica se os botões de ação (Ativar/Inativar e Editar) não são exibidos para perfis que não sejam Administrador.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS com perfil de Gestor ou outro</Step>
+            <Step>2. Quando acessar a aba de BSC para o fornecedor selecionado</Step>
+            <Step>3. Então o botão de ação para ativar/inativar e editar um BSC não deve ser exibido</Step>
+        </Steps>
+        <ExpectedResult>Os botões de ação (Ativar/Inativar e Editar) não devem estar visíveis para perfis que não sejam Administrador.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 6 - Mensagem Quando Não Houver BSCs Cadastrados -->
+    <TestCase>
+        <Summary>Mensagem Quando Não Houver BSCs Cadastrados</Summary>
+        <Description>Testa a exibição de uma mensagem informando que não há BSCs cadastrados quando não houver BSCs.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de BSC para o fornecedor selecionado</Step>
+            <Step>3. E não houver BSCs cadastrados</Step>
+            <Step>4. Então a tela deve exibir uma mensagem informando que não há BSCs cadastrados</Step>
+        </Steps>
+        <ExpectedResult>Uma mensagem informando que não há BSCs cadastrados deve ser exibida.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 7 - Listagem de BSCs Cadastrados -->
+    <TestCase>
+        <Summary>Listagem de BSCs Cadastrados</Summary>
+        <Description>Verifica se a lista de BSCs cadastrados para o fornecedor selecionado é exibida corretamente.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de BSC para o fornecedor selecionado</Step>
+            <Step>3. Quando houver BSCs cadastrados</Step>
+            <Step>4. Então a tela deve exibir a listagem de BSCs atrelados ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>A listagem de BSCs cadastrados deve ser exibida corretamente.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 8 - Consistência de Informações do Fornecedor -->
+    <TestCase>
+        <Summary>Consistência de Informações do Fornecedor</Summary>
+        <Description>Testa se as informações exibidas na aba de BSC são consistentes com as informações da listagem de fornecedores para o fornecedor selecionado.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E acessar a aba de BSC para o fornecedor selecionado</Step>
+            <Step>3. Quando verificar as informações na aba de BSC</Step>
+            <Step>4. Então as informações devem ser consistentes e iguais às apresentadas na tela de listagem de fornecedores para o fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações exibidas na aba de BSC devem ser consistentes com as informações da listagem de fornecedores.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 1 - Visualização de Penalidades e Bonificações com Informações do Fornecedor Selecionado -->
+    <TestCase>
+        <Summary>Visualização de Penalidades e Bonificações com Informações do Fornecedor Selecionado</Summary>
+        <Description>Verifica se as informações do fornecedor selecionado são apresentadas corretamente na aba de penalidades e bonificações.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha selecionado um fornecedor na listagem de fornecedores</Step>
+            <Step>3. Quando acessar a aba de penalidades e bonificações</Step>
+            <Step>4. Então a tela deve mostrar as mesmas informações que estavam sendo apresentadas na tela de listagem dos fornecedores referente ao fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações exibidas na aba de penalidades e bonificações devem ser consistentes com as da listagem de fornecedores para o fornecedor selecionado.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 2 - Informações de Penalidades e Bonificações Extraídas do MGPT -->
+    <TestCase>
+        <Summary>Informações de Penalidades e Bonificações Extraídas do MGPT</Summary>
+        <Description>Verifica se as informações de penalidades e bonificações são extraídas corretamente do MGPT e apresentadas na tela sem permitir edição.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. Quando acessar a aba de penalidades e bonificações para o fornecedor selecionado</Step>
+            <Step>3. Então as informações de penalidades e bonificações devem ser extraídas do MGPT</Step>
+            <Step>4. E apresentadas na tela sem permitir edição</Step>
+        </Steps>
+        <ExpectedResult>As informações de penalidades e bonificações extraídas do MGPT devem ser exibidas de forma estática, sem a possibilidade de edição.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 3 - Visualização Somente dos Dados de Penalidades e Bonificações -->
+    <TestCase>
+        <Summary>Visualização Somente dos Dados de Penalidades e Bonificações</Summary>
+        <Description>Testa se o usuário consegue visualizar as informações de penalidades e bonificações sem poder editá-las.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha acessado a aba de penalidades e bonificações para o fornecedor selecionado</Step>
+            <Step>3. Quando visualizar os dados de penalidades e bonificações</Step>
+            <Step>4. Então o usuário deve ser capaz de ver todas as informações vinculadas às penalidades e bonificações, mas não deve ser possível fazer a edição dessas informações</Step>
+        </Steps>
+        <ExpectedResult>O usuário deve ser capaz de visualizar as informações, mas não deve ser possível editar os dados.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 4 - Tentativa de Edição das Informações de Penalidades e Bonificações -->
+    <TestCase>
+        <Summary>Tentativa de Edição das Informações de Penalidades e Bonificações</Summary>
+        <Description>Verifica se o sistema não permite a edição das informações de penalidades e bonificações e mantém os campos desativados.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha acessado a aba de penalidades e bonificações para o fornecedor selecionado</Step>
+            <Step>3. Quando tentar editar qualquer informação de penalidades ou bonificações</Step>
+            <Step>4. Então o sistema não deve permitir a edição e deve manter todos os campos desativados para edição</Step>
+        </Steps>
+        <ExpectedResult>Os campos de edição devem estar desativados e a edição não deve ser permitida.</ExpectedResult>
+    </TestCase>
+
+    <!-- Caso 5 - Consistência de Informações do Fornecedor -->
+    <TestCase>
+        <Summary>Consistência de Informações do Fornecedor</Summary>
+        <Description>Testa se as informações exibidas na aba de penalidades e bonificações são consistentes com as informações da listagem de fornecedores para o fornecedor selecionado.</Description>
+        <Steps>
+            <Step>1. Dado que o usuário está logado no portal ANS</Step>
+            <Step>2. E tenha acessado a aba de penalidades e bonificações para o fornecedor selecionado</Step>
+            <Step>3. Quando verificar as informações na aba de penalidades e bonificações</Step>
+            <Step>4. Então as informações devem ser consistentes e iguais às apresentadas na tela de listagem de fornecedores para o fornecedor selecionado</Step>
+        </Steps>
+        <ExpectedResult>As informações exibidas na aba de penalidades e bonificações devem ser consistentes com as informações da listagem de fornecedores.</ExpectedResult>
+    </TestCase>
+</TestCases>
