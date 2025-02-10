@@ -1,0 +1,27 @@
+Níveis de serviço:
+
+Lista para o administrador e o gestor a lista dos fornecedores, número e contrato e status referentes ao mês finalizado para a inserção de massa de dados (upload)
+
+1. Visualização dos fornecedores prestadores relacionados ao mês anterior finalizado e inserção de documentos
+
+a) Dado que o usuário está logado como Administrador ou Gestor no portal ANS
+
+b) Quando o usuário acessa a página com a listagem dos fornecedores ou o fornecedor (gestor) e dentro acessa os indicadores daquele fornecedor.
+
+c) Então a listagem dos fornecedores redireciona para a lista de indicadores daquele fornecedor.
+
+2. Visualização e seleção de indicadores para adicionar a massa de dados
+
+O usuário clica para visualizar a lista de indicadores pode pesquisar por indicadores e seleciona quais indicadores irão, em tela há duas abas: indicadores e histórico.
+
+3. Upload e envio de massa de dados
+
+Após selecionado, a pagina é redirecionada para anexar o arrastar os documentos referentes a massa de dados podendo ser excel, pdf e jpeg.
+
+4. Envio de arquivos para aprovação ou reprovação
+
+Após o upload de dados o usuário poderá enviar para aprovação ou reprovação.
+
+5. Histórico de documentos
+
+O Administrador poderá visualizar na aba “histórico” a lista em ordem de quem fez a modificação daquele fornecedor.
