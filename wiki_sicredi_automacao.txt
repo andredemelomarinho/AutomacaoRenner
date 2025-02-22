@@ -6,8 +6,38 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 
 BDD
-Dado usuário acesso a tela para anexar arquivos
-Quando arrasta ou procure no dispositivo o arquivos "xyz"
-E salva o arquivo(xls, pdf, jpeg)
-Então apresenta um banner com os detalhes do envio 
-E apresenta a opção  cancelar o envio , enviar para aprovação ou voltar para a tela de upload
+Cenário 1: Upload bem-sucedido de múltiplos arquivos
+Dado que o usuário acessa a tela para anexar arquivos
+Quando arrasta ou procura no dispositivo os arquivos "xyz" e "abc"
+E salva os arquivos (xls, pdf, jpeg)
+Então apresenta um banner com os detalhes dos envios
+E exibe as opções cancelar o envio, enviar para aprovação ou voltar para a tela de upload
+
+Cenário 2: Upload de arquivo com formato inválido
+Dado que o usuário acessa a tela para anexar arquivos
+Quando arrasta ou procura no dispositivo o arquivo "xyz.exe"
+E tenta salvar o arquivo
+Então exibe uma mensagem de erro informando "Formato de arquivo não suportado"
+E impede o salvamento até que um arquivo válido seja selecionado
+
+Cenário 3: Cancelar envio após upload
+Dado que o usuário anexou o arquivo "xyz.pdf"
+E o banner com os detalhes do envio foi exibido
+Quando clica em cancelar o envio
+Então o arquivo é removido da fila
+E o usuário retorna para a tela de upload
+
+Cenário 4: Enviar arquivo para aprovação
+Dado que o usuário anexou o arquivo "xyz.xls"
+E o banner com os detalhes do envio foi exibido
+Quando clica em enviar para aprovação
+Então o sistema envia o arquivo para a etapa de aprovação
+E exibe uma mensagem "Arquivo enviado para aprovação com sucesso"
+
+Cenário 5: Falha no envio devido a erro de rede
+Dado que o usuário anexou o arquivo "xyz.jpeg"
+Quando tenta salvar o arquivo
+E ocorre uma falha de conexão
+Então o sistema exibe uma mensagem de erro "Falha ao enviar o arquivo. Verifique sua conexão e tente novamente"
+E mantém o arquivo na tela para uma nova tentativa
+
