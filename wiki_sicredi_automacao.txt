@@ -6,6 +6,27 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 
 BDD
-Dado o envio do arquivo foi feito com sucesso
-Quando acessa a aba histórico de documentos
-Então será apresentado um tooltip com a informação de documento enviado
+Cenário 1: Exibição do tooltip após envio bem-sucedido
+Dado que o envio do arquivo foi feito com sucesso
+Quando o usuário acessa a aba "Histórico de Documentos"
+Então será apresentado um tooltip com a informação "Documento enviado"
+
+Cenário 2: Tooltip não exibido sem envio prévio
+Dado que nenhum arquivo foi enviado
+Quando o usuário acessa a aba "Histórico de Documentos"
+Então o tooltip com a informação "Documento enviado" não deve ser exibido
+
+Cenário 3: Exibição correta do conteúdo do tooltip
+Dado que o envio do arquivo foi feito com sucesso
+Quando o usuário acessa a aba "Histórico de Documentos"
+Então o tooltip exibido deve conter exatamente a mensagem "Documento enviado"
+
+Cenário 4: Verificação de múltiplos envios
+Dado que o usuário enviou múltiplos arquivos com sucesso
+Quando o usuário acessa a aba "Histórico de Documentos"
+Então será apresentado um tooltip para cada arquivo enviado com a informação "Documento enviado"
+
+Cenário 5: Comportamento do tooltip ao passar o mouse
+Dado que o envio do arquivo foi feito com sucesso
+Quando o usuário passa o mouse sobre o ícone ou área correspondente ao arquivo enviado na aba "Histórico de Documentos"
+Então o tooltip com a informação "Documento enviado" deve ser exibido
