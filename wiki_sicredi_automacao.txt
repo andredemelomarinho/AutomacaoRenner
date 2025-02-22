@@ -5,28 +5,38 @@ https://wiki.sicredi.io/pages/viewpage.action?pageId=371786850
 https://radar.sicredi.in/?techRadar=radar-qualidade
 
 
-BDD
-Cenário 1: Exibição do tooltip após envio bem-sucedido
-Dado que o envio do arquivo foi feito com sucesso
-Quando o usuário acessa a aba "Histórico de Documentos"
-Então será apresentado um tooltip com a informação "Documento enviado"
+História de Usuário 1:
+Título: Baixar documentos enviados pelo preposto
+Como administrador
+Quero poder baixar os documentos enviados pelo preposto
+Para revisar e analisar o conteúdo offline
 
-Cenário 2: Tooltip não exibido sem envio prévio
-Dado que nenhum arquivo foi enviado
-Quando o usuário acessa a aba "Histórico de Documentos"
-Então o tooltip com a informação "Documento enviado" não deve ser exibido
+Critérios de Aceite:
+O administrador deve visualizar uma lista de documentos enviados pelo preposto.
+Cada documento deve ter uma opção de download.
+O download deve iniciar ao clicar no botão correspondente.
+O nome e o formato do arquivo devem ser mantidos após o download.
 
-Cenário 3: Exibição correta do conteúdo do tooltip
-Dado que o envio do arquivo foi feito com sucesso
-Quando o usuário acessa a aba "Histórico de Documentos"
-Então o tooltip exibido deve conter exatamente a mensagem "Documento enviado"
+História de Usuário 2:
+Título: Aprovar documentos enviados pelo preposto
+Como administrador
+Quero aprovar os documentos enviados pelo preposto
+Para que eles sejam validados e sigam para os próximos passos
 
-Cenário 4: Verificação de múltiplos envios
-Dado que o usuário enviou múltiplos arquivos com sucesso
-Quando o usuário acessa a aba "Histórico de Documentos"
-Então será apresentado um tooltip para cada arquivo enviado com a informação "Documento enviado"
+Critérios de Aceite:
+O administrador deve visualizar uma opção de "Aprovar" ao lado de cada documento.
+Ao clicar em "Aprovar", o status do documento deve ser atualizado para "Aprovado".
+O sistema deve exibir uma mensagem de confirmação após a aprovação.
 
-Cenário 5: Comportamento do tooltip ao passar o mouse
-Dado que o envio do arquivo foi feito com sucesso
-Quando o usuário passa o mouse sobre o ícone ou área correspondente ao arquivo enviado na aba "Histórico de Documentos"
-Então o tooltip com a informação "Documento enviado" deve ser exibido
+História de Usuário 3:
+Título: Reprovar documentos enviados pelo preposto com justificativa
+Como administrador
+Quero reprovar documentos enviados pelo preposto e adicionar comentários explicando o motivo
+Para que o preposto entenda a razão da reprovação e possa corrigir o documento
+
+Critérios de Aceite:
+O administrador deve visualizar uma opção de "Reprovar" ao lado de cada documento.
+Ao clicar em "Reprovar", o sistema deve solicitar um comentário obrigatório explicando o motivo da reprovação.
+O sistema deve impedir a reprovação sem o preenchimento do comentário.
+Após a reprovação, o status do documento deve ser atualizado para "Reprovado".
+O preposto deve ser notificado sobre a reprovação junto com o comentário.
