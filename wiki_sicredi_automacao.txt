@@ -6,41 +6,8 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 
 BDD
-Dado O usuário clica para visualizar a lista de indicadores 
-Quando pesquisa por indicadores 
-E seleciona quais indicadores desejados
-E clica no botão adicionar massa de dados
-
-
-Cenário 1: Adição bem-sucedida de massa de dados
-Dado o usuário clica para visualizar a lista de indicadores
-Quando pesquisa por indicadores
-E seleciona os indicadores desejados
-E clica no botão "Adicionar massa de dados"
-Então o sistema deve exibir uma confirmação de que a massa de dados foi adicionada com sucesso
-
-Cenário 2: Nenhum indicador selecionado
-Dado o usuário clica para visualizar a lista de indicadores
-Quando pesquisa por indicadores
-E não seleciona nenhum indicador
-E clica no botão "Adicionar massa de dados"
-Então o sistema deve exibir uma mensagem de erro solicitando que ao menos um indicador seja selecionado
-
-Cenário 3: Pesquisa sem resultados
-Dado o usuário clica para visualizar a lista de indicadores
-Quando pesquisa por um indicador inexistente
-Então o sistema deve exibir uma mensagem informando que nenhum indicador foi encontrado
-
-Cenário 4: Erro ao adicionar massa de dados
-Dado o usuário clica para visualizar a lista de indicadores
-Quando pesquisa por indicadores
-E seleciona os indicadores desejados
-E clica no botão "Adicionar massa de dados"
-E ocorre um erro no sistema durante o processo
-Então o sistema deve exibir uma mensagem de erro informando que não foi possível adicionar a massa de dados
-
-Cenário 5: Filtro de indicadores por categoria
-Dado o usuário clica para visualizar a lista de indicadores
-Quando aplica um filtro por categoria
-E pesquisa por indicadores dentro dessa categoria
-Então o sistema deve exibir apenas os indicadores correspondentes ao filtro aplicado
+Dado usuário acesso a tela para anexar arquivos
+Quando arrasta ou procure no dispositivo o arquivos "xyz"
+E salva o arquivo(xls, pdf, jpeg)
+Então apresenta um banner com os detalhes do envio 
+E apresenta a opção  cancelar o envio , enviar para aprovação ou voltar para a tela de upload
