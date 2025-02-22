@@ -6,6 +6,24 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 
 BDD
-Dado usuário fez o upload do documentos
-Então o documento é aprovado ou reprovado
-E a listagem de indicadores fica com flag de upload enviado e aprovado
+Cenário 1: Upload e aprovação bem-sucedida
+Dado que o usuário fez o upload do documento
+Quando o documento for aprovado
+Então a listagem de indicadores deve exibir a flag de "upload enviado" e "aprovado"
+
+Cenário 2: Upload e reprovação do documento
+Dado que o usuário fez o upload do documento
+Quando o documento for reprovado
+Então a listagem de indicadores deve exibir a flag de "upload enviado" e "reprovado"
+
+Cenário 3: Upload pendente de avaliação
+Dado que o usuário fez o upload do documento
+Quando o documento estiver aguardando avaliação
+Então a listagem de indicadores deve exibir a flag de "upload enviado" e "pendente"
+
+Cenário 4: Novo upload após reprovação
+Dado que o usuário fez o upload do documento e ele foi reprovado
+Quando o usuário fizer um novo upload do documento corrigido
+Então o sistema deve substituir o documento anterior
+E a listagem de indicadores deve exibir a flag de "upload enviado" e "pendente"
+
