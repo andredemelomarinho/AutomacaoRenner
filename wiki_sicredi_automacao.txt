@@ -3,4 +3,13 @@ https://wiki.sicredi.io/pages/viewpage.action?pageId=297440390
 https://wiki.sicredi.io/pages/viewpage.action?pageId=371786850
  
 https://radar.sicredi.in/?techRadar=radar-qualidade
+
+
+BDD
+Dado que o usuário está logado como Administrador ou Gestor no portal ANS
+Quando o usuário acessa a página com a listagem dos fornecedores, o Administrador e gestor e dentro acessa os indicadores daquele fornecedor.
+E admin visualizar todos os fornecedores
+E gestor visualizar somente o forncedor vinculado ao seu perfil
+Então a listagem dos fornecedores redireciona para a lista de indicadores daquele fornecedor
+E a visualização é por projeto por fornecedor (número e contrato e status)"prévia","concluído-aprovado","concluído-reprovado", "não enviado"
  
