@@ -4,6 +4,7 @@ https://wiki.sicredi.io/pages/viewpage.action?pageId=371786850
  
 https://radar.sicredi.in/?techRadar=radar-qualidade
 
+https://www.figma.com/design/61p8ak3EhUvgYRAUBKZ3pV/Projeto-ANS-Sicredi-%3A%3A-DATUM?node-id=1194-13132&t=HcOENiFW3tuMzwwB-1
 
 História de Usuário 1:
 Título: Baixar documentos enviados pelo preposto
