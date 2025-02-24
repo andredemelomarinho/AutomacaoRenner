@@ -6,6 +6,14 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 https://www.figma.com/design/61p8ak3EhUvgYRAUBKZ3pV/Projeto-ANS-Sicredi-%3A%3A-DATUM?node-id=1194-13132&t=HcOENiFW3tuMzwwB-1
 
+História de Usuário:
+
+Como administrador,
+Eu quero visualizar o histórico de movimentações feitas referente ao nível de serviço,
+Para que eu possa aprovar ou reprovar as ações, garantindo que todos os processos estejam de acordo com os padrões estabelecidos.
+
+Critérios de Aceitação:
+
 Visualização do Histórico de Movimentações:
 O administrador deve ser capaz de visualizar todas as movimentações relacionadas ao nível de serviço, incluindo data, hora, usuário responsável e descrição das ações realizadas.
 
@@ -20,4 +28,3 @@ Os comentários adicionados pelo administrador deverão ser visíveis para todos
 
 Feedback ao Usuário:
 O usuário responsável pela movimentação deverá receber uma notificação sobre a aprovação ou reprovação da movimentação, juntamente com o comentário do administrador, caso a movimentação seja reprovada.
-
