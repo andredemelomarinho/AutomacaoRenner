@@ -8,25 +8,39 @@ https://www.figma.com/design/61p8ak3EhUvgYRAUBKZ3pV/Projeto-ANS-Sicredi-%3A%3A-D
 
 Vc deve criar aqui https://devconsole.sicredi.in/catalog/application/ans-qa
 
-História de Usuário:
-
-Como administrador,
-Eu quero visualizar o histórico de movimentações feitas referente ao nível de serviço,
-Para que eu possa aprovar ou reprovar as ações, garantindo que todos os processos estejam de acordo com os padrões estabelecidos.
+História de Usuário 1: Visualização de Indicadores Gerenciais
+Como gestor ou preposto
+Quero visualizar um dashboard com números dos resultados dos meus indicadores
+Para que eu possa acompanhar meu desempenho de forma clara
 
 Critérios de Aceitação:
 
-Visualização do Histórico de Movimentações:
-O administrador deve ser capaz de visualizar todas as movimentações relacionadas ao nível de serviço, incluindo data, hora, usuário responsável e descrição das ações realizadas.
+O usuário deve visualizar apenas seus próprios indicadores no dashboard.
+Os administradores devem visualizar todos os indicadores consolidados em um dashboard geral.
+O dashboard deve exibir os indicadores de forma numérica e clara.
+Deve haver um filtro para refinar os dados exibidos.
+As informações devem ser atualizadas dinamicamente conforme a seleção dos filtros.
 
-Aprovação ou Reprovação:
-O administrador deve ter a opção de aprovar ou reprovar cada movimentação registrada no histórico.
+História de Usuário 2: Visualização de Indicadores Analíticos
+Como gestor ou preposto
+Quero visualizar um dashboard com gráficos dos resultados dos meus indicadores
+Para que eu possa analisar tendências e padrões visuais facilmente
 
-Adicionar Comentários na Reprovação:
-Caso o administrador reprove uma movimentação, ele deverá ser solicitado a adicionar um comentário explicando o motivo da reprovação. Este comentário deverá ser registrado junto à movimentação.
+Critérios de Aceitação:
 
-Registro de Comentários:
-Os comentários adicionados pelo administrador deverão ser visíveis para todos os envolvidos na movimentação, garantindo a transparência no processo de aprovação ou reprovação.
+O usuário deve visualizar apenas seus próprios indicadores no dashboard.
+Os administradores devem visualizar todos os indicadores consolidados em um dashboard geral.
+O dashboard deve apresentar os indicadores em formato gráfico.
+Deve haver um filtro para refinar os dados exibidos.
+Os gráficos devem atualizar dinamicamente conforme a seleção dos filtros.
 
-Feedback ao Usuário:
-O usuário responsável pela movimentação deverá receber uma notificação sobre a aprovação ou reprovação da movimentação, juntamente com o comentário do administrador, caso a movimentação seja reprovada.
+História de Usuário 3: Exportação de Dados
+Como gestor, preposto ou administrador
+Quero exportar os dados dos meus indicadores em formato Excel
+Para que eu possa compartilhar informações quando necessário
+
+Critérios de Aceitação:
+
+O sistema deve permitir a exportação dos dados em formato Excel.
+Os dados exportados devem refletir os filtros aplicados no dashboard.
+A exportação deve estar disponível tanto para dashboards gerenciais (números) quanto analíticos (gráficos).
