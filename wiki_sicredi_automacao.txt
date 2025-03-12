@@ -6,6 +6,31 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 https://www.figma.com/design/61p8ak3EhUvgYRAUBKZ3pV/Projeto-ANS-Sicredi-%3A%3A-DATUM?node-id=1194-13132&t=HcOENiFW3tuMzwwB-1
 
+Status	Contagem	Percentagem
+Aguardando Desenvolvimento	1	
+1%
+Aguardando Homologação	19	
+23%
+Aberto	4	
+5%
+Sub Aberto	4	
+5%
+Sub Aguardando Desenvolvimento	1	
+1%
+Em Desenvolvimento	1	
+1%
+Sub Em Desenvolvimento	1	
+1%
+Cancelado	2	
+2%
+Sub Cancelado	1	
+1%
+Sub Concluído	49	
+59%
+Total	83	
+
+
+
 Vc deve criar aqui https://devconsole.sicredi.in/catalog/application/ans-qa
 
 História de Usuário 1: Visualização de Indicadores Gerenciais
