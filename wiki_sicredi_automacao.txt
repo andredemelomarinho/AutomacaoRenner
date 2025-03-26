@@ -6,6 +6,12 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 https://devconsole.sicredi.in/catalog/application/ans-qa
 
+https://estrutura-organizacional-legado-api.uat.sicredi.cloud/pesquisar-usuarios-perfil
+ 
+{
+    "nomFuncao": "timesheet_admin"
+}
+ 
 
 https://dircorp-usuario-api.dev.sicredi.cloud/usuario/cpf/83972064004
 https://dircorp-usuario-api.dev.sicredi.cloud/usuario/luiz_fmoraes
