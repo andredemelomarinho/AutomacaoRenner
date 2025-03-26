@@ -4,6 +4,9 @@ https://wiki.sicredi.io/pages/viewpage.action?pageId=371786850
  
 https://radar.sicredi.in/?techRadar=radar-qualidade
 
+https://devconsole.sicredi.in/catalog/application/ans-qa
+
+
 https://dircorp-usuario-api.dev.sicredi.cloud/usuario/cpf/83972064004
 https://dircorp-usuario-api.dev.sicredi.cloud/usuario/luiz_fmoraes
 
