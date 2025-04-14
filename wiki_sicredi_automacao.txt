@@ -20,3 +20,7 @@ https://www.figma.com/design/61p8ak3EhUvgYRAUBKZ3pV/Projeto-ANS-Sicredi-%3A%3A-D
 
 https://dircorp-usuario-api.dev.sicredi.cloud/usuario/cpf/83972064004
 https://dircorp-usuario-api.dev.sicredi.cloud/usuario/luiz_fmoraes
+
+
+https://wiki.sicredi.io/pages/viewpage.action?pageId=220929579
+https://wiki.sicredi.io/pages/viewpage.action?pageId=314279369
