@@ -6,6 +6,8 @@ https://radar.sicredi.in/?techRadar=radar-qualidade
 
 https://devconsole.sicredi.in/catalog/application/ans-qa
 
+https://gitlab.sicredi.net/qualidade/templates/selenide-java-maven-test/-/blob/master/.gitlab-ci.yml?ref_type=heads
+
 https://estrutura-organizacional-legado-api.uat.sicredi.cloud/pesquisar-usuarios-perfil
  
 {
