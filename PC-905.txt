@@ -1,0 +1,172 @@
+Claro, vou criar cenários de teste para todas as regras de negócios fornecidas. Aqui estão os cenários de teste detalhados:
+
+### Cenários de Teste para Regras de Negócio
+
+#### Cenário 1: Leitura de QR Code Composto com URL de Recorrência
+**Dado** que o usuário pagador possui um QR Code composto com URL de recorrência,
+**Quando** o usuário realiza a leitura do QR Code,
+**Então** o sistema deve identificar a URL de recorrência e processar as informações de configuração de recorrência.
+
+#### Cenário 2: Validação de URLs sem Prefixo de Protocolo
+**Dado** que o QR Code composto contém URLs,
+**Quando** o sistema realiza a leitura das URLs,
+**Então** o sistema deve verificar que as URLs não possuem prefixo de protocolo.
+
+#### Cenário 3: Verificação de Caracteres Inválidos nas URLs
+**Dado** que o QR Code composto contém URLs,
+**Quando** o sistema realiza a leitura das URLs,
+**Então** o sistema deve validar a presença de caracteres inválidos nas URLs.
+
+#### Cenário 4: Acesso via HTTPS
+**Dado** que o QR Code composto contém URLs,
+**Quando** o sistema tenta acessar as URLs,
+**Então** o acesso deve ser realizado exclusivamente via HTTPS.
+
+#### Cenário 5: Reutilização de BR Code Composto
+**Dado** que o usuário pagador possui um BR Code composto,
+**Quando** o usuário reutiliza o BR Code para vários pagamentos,
+**Então** o valor e txid obtidos via Link URL do pagamento devem mudar a cada transação.
+
+#### Cenário 6: Erro na Leitura de URL na Jornada de Autorização 3
+**Dado** que o usuário pagador está na jornada de autorização 3,
+**Quando** ocorre um erro na leitura de qualquer dos dois links URL,
+**Então** o sistema deve exibir uma mensagem de erro e interromper o processo de pagamento/autorização.
+
+#### Cenário 7: Erro na Leitura de URL na Jornada de Autorização 4
+**Dado** que o usuário pagador está na jornada de autorização 4,
+**Quando** ocorre um erro na leitura do link ou nos dados da cobrança,
+**Então** o sistema deve exibir uma mensagem de erro para o pagador.
+
+#### Cenário 8: Continuação do Pagamento sem Pix Automático na Jornada de Autorização 4
+**Dado** que o usuário pagador está na jornada de autorização 4,
+**Quando** ocorre um erro no link da recorrência,
+**Então** o sistema deve permitir que o usuário continue com o processo de pagamento normal de um QR Code estático ou dinâmico com vencimento, sem a oferta do Pix Automático ao final da jornada.
+
+#### Cenário 9: Leitura de QR Code Composto por Copia e Cola
+**Dado** que o usuário pagador possui um QR Code composto,
+**Quando** o usuário realiza a leitura do QR Code por Copia e Cola,
+**Então** o sistema deve permitir a leitura e processar as informações corretamente.
+
+#### Cenário 10: Validação de URLs de Cobrança e Recorrência
+**Dado** que o QR Code composto contém URLs de cobrança e recorrência,
+**Quando** o sistema realiza a leitura das URLs,
+**Então** o sistema deve validar a presença de caracteres inválidos e suas partes constituintes (prefixo, domínio, aplicação e demais fragmentos) antes de qualquer tentativa de acesso.
+
+#### Cenário 11: Verificação de Campos JSON Nulos
+**Dado** que o QR Code composto contém uma estrutura JSON associada ao acesso à URL,
+**Quando** o sistema realiza a leitura da estrutura JSON,
+**Então** todos os campos devem estar nulos e só devem ser preenchidos depois que o acesso for realizado e todas as verificações de segurança forem positivas.
+
+#### Cenário 12: Validação de Domínio Válido Autorizado pelo PSP
+**Dado** que o QR Code composto contém URLs,
+**Quando** o sistema tenta acessar as URLs,
+**Então** o acesso deve ser realizado após validações, incluindo o domínio válido autorizado pelo PSP do recebedor para geração de QR Codes, exclusivamente via HTTPS.
+
+#### Cenário 13: Verificação do Tamanho Máximo da URL
+**Dado** que o QR Code composto contém URLs,
+**Quando** o sistema realiza a leitura das URLs,
+**Então** o tamanho máximo da URL completa (sem o prefixo de protocolo) deve ser de 77 caracteres.
+
+#### Cenário 14: Hospedagem de URLs por Qualquer PSP
+**Dado** que o QR Code composto contém URLs,
+**Quando** o sistema realiza a leitura das URLs,
+**Então** qualquer PSP deve poder hospedar URLs de QR Codes em seus respectivos domínios.
+
+#### Cenário 15: Serviço de Hospedagem de Payloads de QR Codes
+**Dado** que o PSP atua como participante responsável ou liquidante de outro participante do Pix,
+**Quando** o PSP contratante solicita o serviço de hospedagem de payloads de QR Codes,
+**Então** o PSP responsável deve ofertar o serviço de hospedagem.
+
+#### Cenário 16: Configurações do QR Code Composto
+**Dado** que o QR Code composto pode apresentar três configurações,
+**Quando** o sistema realiza a leitura do QR Code,
+**Então** o sistema deve identificar se o QR Code composto contém apenas dados de recorrência, dados estáticos e recorrência, ou dados dinâmicos (pagamento imediato ou com vencimento) e recorrência.
+
+#### Cenário 17: Apresentação de URL com Parâmetros de Recorrência
+**Dado** que o QR Code composto contém apenas dados de recorrência,
+**Quando** o sistema realiza a leitura do QR Code,
+**Então** o sistema deve apresentar a URL com os parâmetros de recorrência.
+
+#### Cenário 18: QR Code Estático Estendido com Funcionalidades de Recorrência
+**Dado** que o QR Code composto contém dados estáticos e recorrência,
+**Quando** o sistema realiza a leitura do QR Code,
+**Então** o sistema deve tratar o QR Code como um QR Code estático estendido com as funcionalidades de recorrência.
+
+#### Cenário 19: QR Code Dinâmico Estendido com Funcionalidades de Recorrência
+**Dado** que o QR Code composto contém dados dinâmicos (pagamento imediato ou com vencimento) e recorrência,
+**Quando** o sistema realiza a leitura do QR Code,
+**Então** o sistema deve tratar o QR Code como um QR Code dinâmico estendido, onde o campo Link URL do pagamento representa uma URL que será utilizada para recuperação dos dados que fazem parte do pagamento e o campo Link URL dos parâmetros de recorrência representa uma URL que será utilizada para recuperação dos dados que parametrizam a recorrência.
+
+#### Cenário 20: Verificação de fqdnPspRecebedor Idêntico
+**Dado** que o QR Code composto contém duas URLs,
+**Quando** o sistema realiza a leitura das URLs,
+**Então** o fqdnPspRecebedor das duas URLs deve ser idêntico.
+
+#### Cenário 21: Prioridade dos Dados Retornados pelos Links de Recorrência e Pagamento
+**Dado** que o QR Code composto contém links de recorrência e pagamento,
+**Quando** o sistema realiza a leitura dos links,
+**Então** os dados retornados pelos links devem ter prioridade sobre os campos específicos do formato EMV, como Valor ou Identificador da Transação.
+
+#### Cenário 22: Estrutura do Payload JSON do Pagamento
+**Dado** que o QR Code composto contém um payload JSON do pagamento,
+**Quando** o sistema realiza a leitura do payload JSON,
+**Então** o payload JSON deve obedecer à estrutura já definida no Pix, correlata do QR Code dinâmico, para pagamentos imediatos e com vencimento, exceto a estrutura valor.retirada.
+
+#### Cenário 23: Ausência da Estrutura valor.retirada em Pagamentos Imediatos
+**Dado** que o QR Code composto contém um payload JSON do pagamento,
+**Quando** o sistema realiza a leitura do payload JSON para pagamentos imediatos,
+**Então** a estrutura valor.retirada não deve estar presente.
+
+#### Cenário 24: Estrutura do Payload JSON dos Parâmetros de Recorrência
+**Dado** que o QR Code composto contém um payload JSON dos parâmetros de recorrência,
+**Quando** o sistema realiza a leitura do payload JSON,
+**Então** o payload JSON deve mostrar: as informações sobre o vínculo do usuário devedor com o usuário recebedor; a periodicidade desejada, com datas de início e fim (opcional); o valor da recorrência e o valor mínimo aceito pelo recebedor (opcionais); os dados do usuário recebedor; a política de retentativas a ser aplicada; e uma lista com as mudanças de estado da recorrência correlata.
+
+#### Cenário 25: Ausência de Geração de QR Code para Cobranças Recorrentes no Pix Automático
+**Dado** que o usuário pagador utiliza o Pix Automático,
+**Quando** o sistema realiza a leitura do QR Code composto,
+**Então** não deve haver geração de QR Code para as cobranças recorrentes.
+
+### Cenários de Teste para Regras de Negócio
+
+#### Cenário 26: Erro na Leitura de QR Code na Jornada de Autorização 3
+**Dado** que o usuário pagador está na jornada de autorização 3,
+**Quando** ocorre um erro na leitura de qualquer dos dois links URL do QR Code composto,
+**Então** o sistema deve exibir uma mensagem de erro para o usuário pagador e interromper o processo de pagamento/autorização.
+
+#### Cenário 27: Erro na Leitura de QR Code na Jornada de Autorização 4
+**Dado** que o usuário pagador está na jornada de autorização 4,
+**Quando** ocorre um erro na leitura do link ou nos dados da cobrança (inclusive em razão de a cobrança já ter sido paga),
+**Então** o sistema deve exibir uma mensagem de erro para o pagador, independentemente do resultado da leitura do link da recorrência.
+
+#### Cenário 28: Continuação do Pagamento na Jornada de Autorização 4
+**Dado** que o usuário pagador está na jornada de autorização 4,
+**Quando** ocorre um erro no link da recorrência,
+**Então** o sistema deve permitir que o usuário continue com o processo de pagamento normal de um QR Code estático ou dinâmico com vencimento, sem a oferta do Pix Automático ao final da jornada.
+
+#### Cenário 29: Leitura de QR Code na Jornada 2
+**Dado** que o usuário pagador está na jornada 2,
+**Quando** o sistema realiza a leitura do QR Code composto,
+**Então** o sistema deve enviar uma requisição GET para `example.com/rec/{recUrlAccessToken}` e processar a resposta do PSP Recebedor.
+
+#### Cenário 30: Leitura de QR Code na Jornada 3
+**Dado** que o usuário pagador está na jornada 3,
+**Quando** o sistema realiza a leitura do QR Code composto,
+**Então** o sistema deve enviar uma requisição GET para `example.com/{pixUrlAccessToken}` e `example.com/rec/{recUrlAccessToken}` e processar as respostas do PSP Recebedor.
+
+#### Cenário 31: Leitura de QR Code na Jornada 4
+**Dado** que o usuário pagador está na jornada 4,
+**Quando** o sistema realiza a leitura do QR Code composto,
+**Então** o sistema deve enviar uma requisição GET para `example.com/cobv/{pixUrlAccessToken}` e `example.com/rec/{recUrlAccessToken}` e processar as respostas do PSP Recebedor.
+
+#### Cenário 32: Leitura de QR Code na Jornada 4 (Estático)
+**Dado** que o usuário pagador está na jornada 4 (estático),
+**Quando** o sistema realiza a leitura do QR Code composto,
+**Então** o sistema deve enviar uma requisição GET para `example.com/rec/{recUrlAccessToken}` e processar a resposta do PSP Recebedor.
+
+#### Cenário 33: Leitura de QR Code por Copia e Cola
+**Dado** que o usuário pagador possui um QR Code composto,
+**Quando** o usuário realiza a leitura do QR Code por Copia e Cola,
+**Então** o sistema deve permitir a leitura e processar as informações corretamente.
+
+

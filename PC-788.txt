@@ -1,0 +1,85 @@
+Claro, aqui está a tradução para o português:
+
+### História do Usuário
+**Como** PSP Pagador  
+**Eu quero** enviar mensagens do Pix Automático ao Bacen  
+**Para que** eu possa utilizar o Pix Automático como meio de pagamento  
+
+### Narrativa de Negócio
+Para atender a nova funcionalidade do Pix Automático, será necessário atualizar o componente spi-icom-envio para enviar as mensagens do Catálogo de Serviço versão 5.09.2.
+
+### Regras de Negócio
+1. Suportar o envio da mensagem CAMT.029
+2. Suportar o envio da mensagem CAMT.055
+3. Suportar o envio da mensagem PAIN.009
+4. Suportar o envio da mensagem PAIN.011
+5. Suportar o envio da mensagem PAIN.012
+6. Suportar o envio da mensagem PAIN.013 (Secundário)
+7. Suportar o envio da mensagem PAIN.014 (Secundário)
+8. Suportar o envio da mensagem PACS.002
+9. Suportar o envio da mensagem PACS.004
+10. Suportar o envio da mensagem PACS.008
+11. Garantir que as mensagens existentes continuem funcionando
+
+### Critérios de Aceitação
+1. Detalhes dos critérios de aceitação estão faltando e precisam ser fornecidos.
+
+### Cenários de Teste
+Aqui estão alguns cenários de teste baseados nas regras de negócio fornecidas:
+
+#### Cenário 1: Envio da Mensagem CAMT.029
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem CAMT.029 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 2: Envio da Mensagem CAMT.055
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem CAMT.055 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 3: Envio da Mensagem PAIN.009
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PAIN.009 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 4: Envio da Mensagem PAIN.011
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PAIN.011 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 5: Envio da Mensagem PAIN.012
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PAIN.012 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 6: Envio da Mensagem PAIN.013 (Secundário)
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PAIN.013 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 7: Envio da Mensagem PAIN.014 (Secundário)
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PAIN.014 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 8: Envio da Mensagem PACS.002
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PACS.002 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 9: Envio da Mensagem PACS.004
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PACS.004 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 10: Envio da Mensagem PACS.008
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** uma mensagem PACS.008 é enviada  
+**Então** a mensagem deve ser enviada com sucesso ao Bacen  
+
+#### Cenário 11: Garantir que as Mensagens Existentes Funcionem
+**Dado** que o componente spi-icom-envio está atualizado  
+**Quando** as mensagens existentes são enviadas  
+**Então** elas devem continuar funcionando como esperado  
+
+Por favor, forneça os detalhes dos critérios de aceitação que estão faltando para que possamos refinar esses cenários ainda mais.

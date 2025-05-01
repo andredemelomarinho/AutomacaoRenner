@@ -1,0 +1,82 @@
+Vamos criar os cenários de teste com base nas regras de negócio fornecidas para a funcionalidade de recebimento do Pix Automático.
+
+### História do Usuário
+**Como** PSP Pagador  
+**Eu quero** poder receber as mensagens do Pix Automático ao Bacen  
+**Para que** eu possa utilizar o Pix Automático como meio de pagamento  
+
+### Narrativa de Negócio
+Para atender a nova funcionalidade do Pix Automático, será necessário atualizar o componente spitransacional-icom-recebimento-consumer para receber as mensagens do Catálogo de Serviço versão 5.09.2.
+
+### Regras de Negócio
+1. Suportar o recebimento da mensagem CAMT.029
+2. Suportar o recebimento da mensagem CAMT.055
+3. Suportar o recebimento da mensagem PAIN.009
+4. Suportar o recebimento da mensagem PAIN.011
+5. Suportar o recebimento da mensagem PAIN.012
+6. Suportar o recebimento da mensagem PAIN.013
+7. Suportar o recebimento da mensagem PAIN.014
+8. Suportar o recebimento da mensagem PACS.002
+9. Suportar o recebimento da mensagem PACS.004
+10. Suportar o recebimento da mensagem PACS.008
+11. Garantir que as mensagens existentes continuem funcionando
+
+### Cenários de Teste
+Aqui estão os cenários de teste baseados nas regras de negócio fornecidas:
+
+#### Cenário 1: Recebimento da Mensagem CAMT.029
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem CAMT.029 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 2: Recebimento da Mensagem CAMT.055
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem CAMT.055 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 3: Recebimento da Mensagem PAIN.009
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PAIN.009 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 4: Recebimento da Mensagem PAIN.011
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PAIN.011 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 5: Recebimento da Mensagem PAIN.012
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PAIN.012 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 6: Recebimento da Mensagem PAIN.013
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PAIN.013 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 7: Recebimento da Mensagem PAIN.014
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PAIN.014 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 8: Recebimento da Mensagem PACS.002
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PACS.002 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 9: Recebimento da Mensagem PACS.004
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PACS.004 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 10: Recebimento da Mensagem PACS.008
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** uma mensagem PACS.008 é recebida  
+**Então** a mensagem deve ser processada com sucesso  
+
+#### Cenário 11: Garantir que as Mensagens Existentes Funcionem
+**Dado** que o componente spitransacional-icom-recebimento-consumer está atualizado  
+**Quando** as mensagens existentes são recebidas  
+**Então** elas devem continuar funcionando como esperado  
+
+Esses cenários de teste cobrem as regras de negócio fornecidas para garantir que o componente atualizado possa processar todas as mensagens necessárias.
