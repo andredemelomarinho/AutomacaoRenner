@@ -1,147 +1,39 @@
-https://wiki.sicredi.io/pages/viewpage.action?pageId=297440390
- 
-https://wiki.sicredi.io/pages/viewpage.action?pageId=371786850
- 
-https://radar.sicredi.in/?techRadar=radar-qualidade
+Visão do usuário
 
-https://devconsole.sicredi.in/catalog/application/ans-qa
+Como PSP Pagador
 
-https://gitlab.sicredi.net/qualidade/templates/selenide-java-maven-test/-/blob/master/.gitlab-ci.yml?ref_type=heads
+Eu quero poder enviar mensagens do Pix Automático ao Bacen
 
-https://estrutura-organizacional-legado-api.uat.sicredi.cloud/pesquisar-usuarios-perfil
- 
-{
-    "nomFuncao": "timesheet_admin"
-}
- 
+Para que eu possa utilizar o Pix Automático como meio de pagamento
 
-https://dircorp-usuario-api.dev.sicredi.cloud/usuario/cpf/83972064004
-https://dircorp-usuario-api.dev.sicredi.cloud/usuario/luiz_fmoraes
+Narrativa de Negócio
 
-https://www.figma.com/design/61p8ak3EhUvgYRAUBKZ3pV/Projeto-ANS-Sicredi-%3A%3A-DATUM?node-id=1194-13132&t=HcOENiFW3tuMzwwB-1
+Para atender a nova funcionalidade do Pix Automático, será necessário atualizar o componente spi-icom-envio para enviar as mensagens do Catálogo de Serviço versão 5.09.2. 
 
-https://dircorp-usuario-api.dev.sicredi.cloud/usuario/cpf/83972064004
-https://dircorp-usuario-api.dev.sicredi.cloud/usuario/luiz_fmoraes
+Link figma: Pix Transacional - Desenhos técnicos – FigJam
 
+Regras Negócio
 
-https://wiki.sicredi.io/pages/viewpage.action?pageId=220929579
-https://wiki.sicredi.io/pages/viewpage.action?pageId=314279369
+	Regra	
 
-https://www.figma.com/board/MyLTpgnSbueuFnJ7WjoiU2/Pix-Transacional---Desenhos-t%C3%A9cnicos?node-id=4-3&p=f&t=osGDpKeDOpF7I6Mb-0
-https://www.figma.com/board/jtGeYZH7eFDKTmas3G5igC/Mesa-3---Vol%C3%A1til?node-id=88-228&t=S7NDIlCDW2W2fuf3-0
+1	Suportar o envio da mensagem CAMT.029   	
 
+2	Suportar o envio da mensagem CAMT.055	
 
+3	Suportar o envio da mensagem PAIN.009	Taciana Freitas da Silva e Felipe Camargos Ribeiro, devemos implementar esse cenário agora visto que só se aplica no Pix Automático Recebedor? 
+4	Suportar o envio da mensagem PAIN.011	
 
+5	Suportar o envio da mensagem PAIN.012	
 
-Visão geral o Pix automático permite o pagamento de uma cobrança da recorrente de forma automática, mediante concessão de uma permissão pelo usuário pagador ao usuário recebedor e de uma autorização do do ao PSP pagador, utilizando a infraestrutura do Pix. Vou explicar melhor isso pra vocês? Ent.
-Taciana Freitas da Silva 1 minute 4 seconds
-Primeira coisa que a gente tem que entender é a diferença do agendado recorrente, que é o que está essa iniciativa que o pessoal está concluindo com o Pix automático. O recorrente, ele inicia pelo pagador, usuário pagador vai lá e cadastra na conta dele uma recorrência de pagamentos de.
-Taciana Freitas da Silva 1 minute 25 seconds
-Pix?
-Taciana Freitas da Silva 1 minute 26 seconds
-Ele tem sempre um valor fixo. Finalidade segue a regra geral do Pix, então pode ser pagamento, pode ser transferência e o recebedor. Ele pode ser PF ou PJ, então é sempre o pagador que inicia o cadastro desse recorrente.
-Taciana Freitas da Silva 1 minute 49 seconds
-Já o Pix automático, ele pode ser iniciado pelo pagador.
-Taciana Freitas da Silva 1 minute 56 seconds
-Pelo pelo pagador através da leitura de um QR Code ou o recebedor, ele gera uma solicitação e envia para o pagador, para o para OPSP do pagador e aí ele inicia essa o ciclo do Pix automático pode ser um valor fixo ou variável por.
-Taciana Freitas da Silva 2 minutes 19 seconds
-O Pix automático pode ser, por exemplo, o pagamento de uma conta de luz. Cada mês vê um valor diferente, entendeu?
-Taciana Freitas da Silva 43 minutes 47 seconds
-Envia por PSP pagador uma solicitação e o psp pagador tem que responder para ele, se um minuto ele não responder, o psp recebedor já manda cancelar.
-Taciana Freitas da Silva 43 minutes 57 seconds
-Está diferente da pendência de aprovação do do do usuário. Ele também não depende da conta pagadora.
-Taciana Freitas da Silva 44 minutes 6 seconds
-Então, quando OPSP recebedor, manda 11, cancelamento, ele é automático, não precisa da aprovação do outro lado e um cancelamento pelo apta recebedora, cancela todos os agendamentos de de mais um ou data posterior, sendo que d é a data de recebimento da pen. 11 que.
-Taciana Freitas da Silva 44 minutes 26 seconds
-Essa solicitação de cancelamento pelo pagador, então, por exemplo, se ele mandou OPSP pagador, se o se OPSP pagador recebeu uma pen 11?
-Taciana Freitas da Silva 44 minutes 39 seconds
-Após as 10 horas, devem ser cancelada apenas os ajeitamentos previstos para d mais 2 ou data posterior, considerando.
-Taciana Freitas da Silva 44 minutes 50 seconds
-Ou data posterior, se o cancelamento de ir, se ele for antes das 22, é de mais um, tá no dia seguinte.
-Taciana Freitas da Silva 45 minutes 3 seconds
-É olhando aqui, né? Nessas Datas aqui, o recebedor pode cancelar até as 22 do dia anterior. Isso vale também para cancelamento de de da autorização? Está, então ele pode cancelar até as 22 do dia anterior.
-Taciana Freitas da Silva 45 minutes 18 seconds
-E aí quando ele realiza o cancelamento é ele tem que comunicar OOPSP recebedor, ele faz, ele envia uma cama cam 55 por motivo do cancelamento, que é esse CCLD que é cancelamento de autorização para pagamentos periódicos. Depois eu vou eu.
-Taciana Freitas da Silva 45 minutes 39 seconds
-Vou passar uma listinha para vocês tal lá, lá Na Na.
-Taciana Freitas da Silva 45 minutes 43 seconds
-Nas histórias também vai ter, né? O chip de cancelamento e do mesmo jeito o recebedor também pode solicitar o cancelamento. Quando encerra a conta ou a empresa foi encerrada ou tem suspeita de fraude, etc.
-Taciana Freitas da Silva 45 minutes 58 seconds
-Aí, aqui, vou passar isso daqui. Alterações qualquer alteração em uma autorização, ele tem que cancelar vigente e criar uma nova, tá?
-Taciana Freitas da Silva 46 minutes 11 seconds
-Aí, situações que é possível alterar uma recorrência sem precisar cancelar e criar uma nova é quando ela recorrência. Ainda não foi confirmada. Então daquela parte lá que ele mandou AA autorização, ainda está pendente, então ele pode enviar ali uma.
-Taciana Freitas da Silva 46 minutes 32 seconds
-Alteração de informações enquanto eu, o usuário ainda não confirmou.
-Taciana Freitas da Silva 46 minutes 39 seconds
-E aí a data prevista do primeiro pagamento ele pode alterar a data prevista do primeiro pagamento e as informações lá da da transação, que é aquela é informação específica, né? Contrato tudo mais?
-Taciana Freitas da Silva 46 minutes 55 seconds
-Antes ou depois da confirmação da recorrência, pode ser alterado o location e o nome do devedor.
-Taciana Freitas da Silva 47 minutes 4 seconds
-E os dados da autorização que podem ser alterados pelo usuário pagador, são os parâmetros que ele pode configurar, que é o valor máximo, se ele pode ou não usar o limite de crédito e se ele recebe ou não notificações de agendamento.
-Taciana Freitas da Silva 47 minutes 23 seconds
-Eu vou pular essa parte que eu já falei, mas, enfim, quando a pagadora, ela autoriza? A autorização concedida pelo pagador. Aí o receber a ponta recebedora o recebedor gera as cobranças na periocidade estabelecida na recorrência. Instruções de pagamento devem ser estar compatíveis com os dados da recorrência e.
-Taciana Freitas da Silva 47 minutes 49 seconds
-Ser enviadas ao PSP pelo PSP recebedor ao PSP pagador OPSP pagador verifica se as informações são compatíveis, se existe a autorização vigente e faz o agendamento, né?
-Taciana Freitas da Silva 48 minutes 8 seconds
-Ele valida as informações e faz o agendamento.
-Taciana Freitas da Silva 48 minutes 13 seconds
-Agendamento, caso que OPSP pagador deve rejeitar a instrução de pagamento. Gente, eu acho que isso daqui a gente pode deixar para amanhã, né?
-Taciana Freitas da Silva 48 minutes 24 seconds
-É, tem bastante coisa ainda, ó, acho que do agendar mesmo, a gente pode deixar para amanhã falar para não, para não ter que correr demais com esse assunto.
-Taciana Freitas da Silva 48 minutes 32 seconds
-Vou deixar para amanhã isso daqui.
-Taciana Freitas da Silva 48 minutes 35 seconds
-É?
-Taciana Freitas da Silva 48 minutes 39 seconds
-Você tem alguma dúvida, alguma coisa? Por enquanto, dessa parte que eu expliquei até agora que acabei de um dando uma acelerada no final aqui sim, eu vou mandar.
+6	Suportar o envio da mensagem PAIN.013 - Secundário	Taciana Freitas da Silva e Felipe Camargos Ribeiro, devemos implementar esse cenário agora visto que só se aplica no Pix Automático Recebedor?
+7	Suportar o envio da mensagem PAIN.014 - Secundário	
 
-Marcus Venicius Cavalcanti
-48 minutes 45 seconds48:45
-Marcus Venicius Cavalcanti 48 minutes 45 seconds
-A mim está.
-M
-Marcos Vinícius Campos Alves
-48 minutes 50 seconds48:50
-Marcos Vinícius Campos Alves 48 minutes 50 seconds
-Também tá OK? Também também está bem explicadinho do Tarso. Parabéns.
+8	Suportar o envio da mensagem PACS.002	
 
-Taciana Freitas da Silva
-48 minutes 56 seconds48:56
-Taciana Freitas da Silva 48 minutes 56 seconds
-É?
-Taciana Freitas da Silva 48 minutes 56 seconds
-Então assim eu vou continuar amanhã eu vou já mandar para vocês aqui amanhã a gente eu continuo porque ainda tem bastante coisa. Aqui está.
-Taciana Freitas da Silva 49 minutes 8 seconds
-Ainda tem uma umas outras partes aí para explicar parte de erro de notificações, tá? Mas a grosso modo, assim, o que tem que ficar mais claro, a diferença do Pix recorrente, normal no agendamento recorrente e do Pix automático.
-Taciana Freitas da Silva 49 minutes 31 seconds
-É aquela primeira, a primeira tela ali que eu mostrei para vocês. Tem que ficar bem claro, porque apesar da gente usar a mesma estrutura de recorrência, ele tem características próprias ali, tá? Que diverge um do outro.
-Taciana Freitas da Silva 49 minutes 46 seconds
-É isso, pessoal. Eu acho que eu falei muito rápido, falei muita coisa. É, enfim.
+9	Suportar o envio da mensagem PACS.004	
 
-Marcus Venicius Cavalcanti
-49 minutes 52 seconds49:52
-Marcus Venicius Cavalcanti 49 minutes 52 seconds
-Ficou bom?
+10	Suportar o envio da mensagem PACS.008	
 
-Taciana Freitas da Silva
-49 minutes 54 seconds49:54
-Taciana Freitas da Silva 49 minutes 54 seconds
-Estou tentando ser dinâmica, ajudando aqui, mas é, é muita coisa. Rafa vicks entrou ali depois. Tem alguma coisa.
+11	Garantir que funcione as demais mensagens já existentes	
 
-Raphaela de Oliveira Souza
-50 minutes 3 seconds50:03
-Raphaela de Oliveira Souza 50 minutes 3 seconds
-Eu cheguei na metade, depois eu vou assistir a gravação desde o começo, mas eu entendi também. Ficou super claro, está bem explicadinho.
-
-Taciana Freitas da Silva
-50 minutes 7 seconds50:07
-Taciana Freitas da Silva 50 minutes 7 seconds
-Uhum.
-Taciana Freitas da Silva 50 minutes 11 seconds
-Ah, beleza. A parte dos fluxos é a gente.
-Taciana Freitas da Silva 50 minutes 14 seconds
-Depois eu vou passar o material para vocês. Dá para dar uma olhadinha? É mais técnico ali, né? Mas é interessante para a gente ver, entender o que é o que ele é e o que ele não é.
-Taciana Freitas da Silva 50 minutes 25 seconds
-Para para na hora que a gente for fazer ali os cards, a gente saber, pô, eu estou a fazer isso daqui, isso aqui é daquele pedaço. Até na hora que a gente for fazer o refinamento, a gente entender. Quando é que acontece as coisas, porque olhar o des.
-Taciana Freitas da Silva 50 minutes 38 seconds
-Técnico é uma coisa, entender da parte de negócio, como é que funciona o todo é diferente.
+	
